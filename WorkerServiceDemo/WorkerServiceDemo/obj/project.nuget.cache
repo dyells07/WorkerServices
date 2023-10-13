@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "o9ICN9Ku54xzGJW30n1nhgDB57gmvgv/OFzjSM0xvhYri8KeteIk7zCFF6lu55OQL7fmdpHtj3J/xUioZDXjCA==",
+  "dgSpecHash": "OhevZnQodDsoaCBz8OzuwEl4QlTBZuy1cr6EVtif9k7ET7gqmfyNmaU1F4F2LCXfypQ7yGRNyM7Nx8CWa0Vtzg==",
   "success": true,
-  "projectFilePath": "G:\\Projects\\WorkerServiceDemo\\WorkerServiceDemo\\WorkerServiceDemo.csproj",
+  "projectFilePath": "G:\\Projects\\WorkerServices\\WorkerServiceDemo\\WorkerServiceDemo\\WorkerServiceDemo.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.hosting.abstractions\\2.2.0\\microsoft.aspnetcore.hosting.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.hosting.server.abstractions\\2.2.0\\microsoft.aspnetcore.hosting.server.abstractions.2.2.0.nupkg.sha512",

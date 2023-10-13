@@ -2510,11 +2510,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\Projects\\WorkerServiceDemo\\WorkerServiceDemo\\WorkerServiceDemo.csproj",
+      "projectUniqueName": "G:\\Projects\\WorkerServices\\WorkerServiceDemo\\WorkerServiceDemo\\WorkerServiceDemo.csproj",
       "projectName": "WorkerServiceDemo",
-      "projectPath": "G:\\Projects\\WorkerServiceDemo\\WorkerServiceDemo\\WorkerServiceDemo.csproj",
+      "projectPath": "G:\\Projects\\WorkerServices\\WorkerServiceDemo\\WorkerServiceDemo\\WorkerServiceDemo.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "G:\\Projects\\WorkerServiceDemo\\WorkerServiceDemo\\obj\\",
+      "outputPath": "G:\\Projects\\WorkerServices\\WorkerServiceDemo\\WorkerServiceDemo\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",

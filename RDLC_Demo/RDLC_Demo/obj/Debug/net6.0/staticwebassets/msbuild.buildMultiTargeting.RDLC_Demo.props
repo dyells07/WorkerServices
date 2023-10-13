@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\RDLC_Demo.props" />
+</Project>

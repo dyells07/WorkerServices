@@ -1,0 +1,926 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AspNetCore.Reporting</name>
+    </assembly>
+    <members>
+        <member name="T:AspNetCore.Reporting.Check">
+            <summary>
+            Check
+            </summary>
+        </member>
+        <member name="M:AspNetCore.Reporting.Check.NotNull``1(``0,System.String)">
+            <summary>
+            NotNull
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="value"></param>
+            <param name="parameterName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AspNetCore.Reporting.Check.NotNull``1(``0,System.String,System.String)">
+            <summary>
+            NotNull
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="value"></param>
+            <param name="parameterName"></param>
+            <param name="propertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AspNetCore.Reporting.Check.NotEmpty``1(System.Collections.Generic.IReadOnlyList{``0},System.String)">
+            <summary>
+            NotEmpty
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="value"></param>
+            <param name="parameterName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AspNetCore.Reporting.Check.NotEmpty(System.String,System.String)">
+            <summary>
+            NotEmpty
+            </summary>
+            <param name="value"></param>
+            <param name="parameterName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AspNetCore.Reporting.Check.NullButNotEmpty(System.String,System.String)">
+            <summary>
+            NullButNotEmpty
+            </summary>
+            <param name="value"></param>
+            <param name="parameterName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AspNetCore.Reporting.Check.HasNoNulls``1(System.Collections.Generic.IList{``0},System.String)">
+            <summary>
+            HasNoNulls
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="value"></param>
+            <param name="parameterName"></param>
+            <returns></returns>
+        </member>
+        <member name="P:AspNetCore.Reporting.DeviceInfos.HtmlDeviceInfo.Section">
+            <summary>
+            page index
+            </summary>
+        </member>
+        <member name="T:AspNetCore.Reporting.DeviceInfos.PdfDeviceInfo">
+            <summary>
+            See https://msdn.microsoft.com/en-us/library/ms154682(v=sql.105).aspx
+            </summary>
+        </member>
+        <member name="T:AspNetCore.Reporting.LocalReport">
+            <summary>
+            execute local report. such as: rdl,rdlc
+            </summary>
+        </member>
+        <member name="M:AspNetCore.Reporting.LocalReport.#ctor(System.String)">
+            <summary>
+            absolute local report path.
+            such as: rdl,rdlc
+            </summary>
+            <param name="reportPath"></param>
+        </member>
+        <member name="M:AspNetCore.Reporting.LocalReport.AddDataSource(System.String,System.Object)">
+            <summary>
+            add report data source datatable,reader,dataset, model
+            </summary>
+            <param name="dataSetName"></param>
+            <param name="dataSource"></param>
+        </member>
+        <member name="M:AspNetCore.Reporting.LocalReport.Execute(AspNetCore.Reporting.RenderType,System.Int32,System.Collections.Generic.Dictionary{System.String,System.String},System.String)">
+            <summary>
+            Execute report result
+            </summary>
+            <param name="renderType">renderType</param>
+            <param name="parameters"> request parameters</param>
+            <param name="pageIndex">page index</param>
+            <param name="findString">find string</param>
+        </member>
+        <member name="T:AspNetCore.Reporting.ReportResult">
+            <summary>
+            report result
+            </summary>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportResult.PageIndex">
+            <summary>
+            current page index
+            </summary>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportResult.MainStream">
+            <summary>
+            report body
+            </summary>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportResult.SecondaryStream">
+            <summary>
+            such as css style
+            </summary>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportResult.TotalPages">
+            <summary>
+            the report total pages
+            </summary>
+        </member>
+        <member name="T:AspNetCore.Reporting.RenderType">
+            <summary>
+            Report Render Type
+            </summary>
+        </member>
+        <member name="F:AspNetCore.Reporting.RenderType.Word">
+            <summary>
+            word 2003-2007 .doc
+            </summary>
+        </member>
+        <member name="F:AspNetCore.Reporting.RenderType.WordOpenXml">
+            <summary>
+            word 2010-2016 .docx
+            </summary>
+        </member>
+        <member name="F:AspNetCore.Reporting.RenderType.Excel">
+            <summary>
+            excel 2003-2007 .xls
+            </summary>
+        </member>
+        <member name="F:AspNetCore.Reporting.RenderType.ExcelOpenXml">
+            <summary>
+            excel 2010-2016 .xlsx
+            </summary>
+        </member>
+        <member name="F:AspNetCore.Reporting.RenderType.Pdf">
+            <summary>
+            pdf file
+            </summary>
+        </member>
+        <member name="F:AspNetCore.Reporting.RenderType.Image">
+            <summary>
+            image
+            </summary>
+        </member>
+        <member name="F:AspNetCore.Reporting.RenderType.Html">
+            <summary>
+            html5
+            </summary>
+        </member>
+        <member name="F:AspNetCore.Reporting.RenderType.Rpl">
+            <summary>
+            RPL
+            </summary>
+        </member>
+        <member name="T:AspNetCore.Reporting.ReportExecuteType">
+            <summary>
+            Report Execute Type
+            </summary>
+        </member>
+        <member name="F:AspNetCore.Reporting.ReportExecuteType.Display">
+            <summary>
+            show html
+            </summary>
+        </member>
+        <member name="F:AspNetCore.Reporting.ReportExecuteType.Export">
+            <summary>
+            export file
+            </summary>
+        </member>
+        <member name="F:AspNetCore.Reporting.ReportExecuteType.FindString">
+            <summary>
+            find strings in report
+            </summary>
+        </member>
+        <member name="F:AspNetCore.Reporting.ReportExecuteType.Toggle">
+            <summary>
+            toggle the report for show or hide child content
+            </summary>
+        </member>
+        <member name="F:AspNetCore.Reporting.ReportExecuteType.Print">
+            <summary>
+            Print report
+            </summary>
+        </member>
+        <member name="F:AspNetCore.Reporting.ReportRenderType.Null">
+            <summary>
+            NULL
+            </summary>
+        </member>
+        <member name="F:AspNetCore.Reporting.ReportRenderType.Word">
+            <summary>
+            word 2003-2007 .doc
+            </summary>
+        </member>
+        <member name="F:AspNetCore.Reporting.ReportRenderType.WordOpenXml">
+            <summary>
+            word 2010-2016 .docx
+            </summary>
+        </member>
+        <member name="F:AspNetCore.Reporting.ReportRenderType.Excel">
+            <summary>
+            excel 2003-2007 .xls
+            </summary>
+        </member>
+        <member name="F:AspNetCore.Reporting.ReportRenderType.ExcelOpenXml">
+            <summary>
+            excel 2010-2016 .xlsx
+            </summary>
+        </member>
+        <member name="F:AspNetCore.Reporting.ReportRenderType.Pptx">
+            <summary>
+            power point 2010-2016 .pptx
+            </summary>
+        </member>
+        <member name="F:AspNetCore.Reporting.ReportRenderType.Pdf">
+            <summary>
+            pdf file
+            </summary>
+        </member>
+        <member name="F:AspNetCore.Reporting.ReportRenderType.Image">
+            <summary>
+            image
+            </summary>
+        </member>
+        <member name="F:AspNetCore.Reporting.ReportRenderType.Mhtml">
+            <summary>
+            Mhtml
+            </summary>
+        </member>
+        <member name="F:AspNetCore.Reporting.ReportRenderType.Csv">
+            <summary>
+            CSV
+            </summary>
+        </member>
+        <member name="F:AspNetCore.Reporting.ReportRenderType.Xml">
+            <summary>
+            XML
+            </summary>
+        </member>
+        <member name="F:AspNetCore.Reporting.ReportRenderType.Atom">
+            <summary>
+            Atom
+            </summary>
+        </member>
+        <member name="F:AspNetCore.Reporting.ReportRenderType.Html4_0">
+            <summary>
+            html4.0
+            </summary>
+        </member>
+        <member name="F:AspNetCore.Reporting.ReportRenderType.Html5">
+            <summary>
+            html5
+            </summary>
+        </member>
+        <member name="F:AspNetCore.Reporting.ReportRenderType.Rpl">
+            <summary>
+            RPL
+            </summary>
+        </member>
+        <member name="T:AspNetCore.Reporting.ReportRequest">
+            <summary>
+            how to Excute for report
+            </summary>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportRequest.Id">
+            <summary>
+            The report id
+            The SSRS useless, but can used by client to set something
+            </summary>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportRequest.Name">
+            <summary>
+            report name, used for export the fileName
+            </summary>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportRequest.FileName">
+            <summary>
+            this is used by export
+            </summary>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportRequest.Path">
+            <summary>
+            The report path on server
+            </summary>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportRequest.SessionId">
+            <summary>
+            the report session id, can used by client to excute report fast
+            </summary>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportRequest.FindString">
+            <summary>
+            set what character to find in report
+            </summary>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportRequest.ToggleId">
+            <summary>
+            the colse div for html which is the element id
+            </summary>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportRequest.PageIndex">
+            <summary>
+            the page index which to display for html
+            </summary>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportRequest.Reset">
+            <summary>
+             Whether reload report data by ignore the session id
+            </summary>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportRequest.RenderType">
+            <summary>
+            how to render the report data
+            </summary>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportRequest.ExecuteType">
+            <summary>
+            how to execute the report
+            </summary>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportRequest.Parameters">
+            <summary>
+            the report parameters of the conditions
+            </summary>
+        </member>
+        <member name="M:AspNetCore.Reporting.ReportRequest.SetFileName(System.String)">
+            <summary>
+            set file name for export file
+            </summary>
+            <param name="append"></param>
+        </member>
+        <member name="T:AspNetCore.Reporting.ReportResponse">
+            <summary>
+            the report executed result
+            </summary>
+        </member>
+        <member name="M:AspNetCore.Reporting.ReportResponse.#ctor">
+            <summary>
+            defalut return success.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.Reporting.ReportResponse.#ctor(System.String)">
+            <summary>
+            return error.
+            </summary>
+            <param name="errorMessage"></param>
+        </member>
+        <member name="M:AspNetCore.Reporting.ReportResponse.SetError(System.String)">
+            <summary>
+            set excuted of error
+            </summary>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportResponse.Status">
+            <summary>
+            0 success
+            </summary>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportResponse.Message">
+            <summary>
+            excute message
+            </summary>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportResponse.Data">
+            <summary>
+            the report data
+            </summary>
+        </member>
+        <member name="T:AspNetCore.Reporting.ReportData">
+            <summary>
+            the report data
+            </summary>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportData.Contents">
+            <summary>
+            string contents
+            e.g. html
+            </summary>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportData.SessionId">
+            <summary>
+            the report session id
+            </summary>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportData.PageIndex">
+            <summary>
+            which page of report to excuting
+            </summary>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportData.PageCount">
+            <summary>
+            the total page count of report
+            </summary>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportData.Version">
+            <summary>
+            版本号
+            </summary>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportData.FileName">
+            <summary>
+            used for export the fileName
+            </summary>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportData.Stream">
+            <summary>
+            the content stream, for download file
+            </summary>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportData.MimeType">
+            <summary>
+            the file mime type
+            </summary>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportData.Extension">
+            <summary>
+            the file extension
+            </summary>
+        </member>
+        <member name="T:AspNetCore.Reporting.ReportSettings">
+            <summary>
+            SSRS Server Settings
+            </summary>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportSettings.ReportServer">
+            <summary>
+            SSRS Server Url
+            </summary>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportSettings.Credential">
+            <summary>
+            Credential 
+            default is DefaultNetworkCredentials
+            </summary>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportSettings.ShowToolBar">
+            <summary>
+            Whether the toolbar is displayed
+            </summary>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportSettings.UserAgent">
+            <summary>
+            use UserAgent to render Report
+            </summary>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportSettings.IsSSL">
+            <summary>
+            Whether the request is SSL
+            </summary>
+        </member>
+        <member name="T:AspNetCore.Reporting.ServerReport">
+            <summary>
+            SSRS Report Viewer 
+            </summary>
+        </member>
+        <member name="F:AspNetCore.Reporting.ServerReport.SuportExportVersion">
+            <summary>
+            MSSQL Server 2012
+            </summary>
+        </member>
+        <member name="F:AspNetCore.Reporting.ServerReport.ExecutionPath">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AspNetCore.Reporting.ServerReport.#ctor(AspNetCore.Reporting.ReportSettings)">
+            <summary>
+            init the report viewer, e.g. set report server,set certificate
+            </summary>
+            <param name="settings"></param>
+        </member>
+        <member name="M:AspNetCore.Reporting.ServerReport.Execute(AspNetCore.Reporting.ReportRequest)">
+            <summary>
+            execute report by use <see cref="T:AspNetCore.Reporting.ReportRequest"/> settings
+            </summary>
+            <param name="request">the request settings for execute report</param>
+            <returns></returns>
+        </member>
+        <member name="M:AspNetCore.Reporting.ServerReport.LoadReport(AspNetCore.Reporting.ReportRequest,AspNetCore.Reporting.ReportExecuteResult@)">
+            <summary>
+            step 1
+            </summary>
+        </member>
+        <member name="M:AspNetCore.Reporting.ServerReport.SetParameters(AspNetCore.Reporting.ReportRequest,AspNetCore.Reporting.ReportExecuteResult)">
+            <summary>
+            step 2.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.Reporting.ServerReport.Render(AspNetCore.Reporting.ReportRequest,AspNetCore.Reporting.ReportExecuteResult@,System.String)">
+            <summary>
+            step 3.
+            </summary>
+            <param name="result"></param>
+        </member>
+        <member name="M:AspNetCore.Reporting.ServerReport.GetPageNumber(AspNetCore.Reporting.ReportRequest,AspNetCore.Reporting.ReportExecuteResult@)">
+            <summary>
+            step 4
+            </summary>
+            <param name="result"></param>
+        </member>
+        <member name="T:AspNetCore.Reporting.ReportExecutionService.ExecutionInfo">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ExecutionInfo.HasSnapshot">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ExecutionInfo.NeedsProcessing">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ExecutionInfo.AllowQueryExecution">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ExecutionInfo.CredentialsRequired">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ExecutionInfo.ParametersRequired">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ExecutionInfo.ExpirationDateTime">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ExecutionInfo.ExecutionDateTime">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ExecutionInfo.NumPages">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ExecutionInfo.Parameters">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ExecutionInfo.DataSourcePrompts">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ExecutionInfo.HasDocumentMap">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ExecutionInfo.ExecutionID">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ExecutionInfo.ReportPath">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ExecutionInfo.HistoryID">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ExecutionInfo.ReportPageSettings">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ExecutionInfo.AutoRefreshInterval">
+            <remarks/>
+        </member>
+        <member name="T:AspNetCore.Reporting.ReportExecutionService.ReportParameter">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ReportParameter.Name">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ReportParameter.Type">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ReportParameter.TypeSpecified">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ReportParameter.Nullable">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ReportParameter.NullableSpecified">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ReportParameter.AllowBlank">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ReportParameter.AllowBlankSpecified">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ReportParameter.MultiValue">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ReportParameter.MultiValueSpecified">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ReportParameter.QueryParameter">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ReportParameter.QueryParameterSpecified">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ReportParameter.Prompt">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ReportParameter.PromptUser">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ReportParameter.PromptUserSpecified">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ReportParameter.Dependencies">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ReportParameter.ValidValuesQueryBased">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ReportParameter.ValidValuesQueryBasedSpecified">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ReportParameter.ValidValues">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ReportParameter.DefaultValuesQueryBased">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ReportParameter.DefaultValuesQueryBasedSpecified">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ReportParameter.DefaultValues">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ReportParameter.State">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ReportParameter.StateSpecified">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ReportParameter.ErrorMessage">
+            <remarks/>
+        </member>
+        <member name="T:AspNetCore.Reporting.ReportExecutionService.ParameterTypeEnum">
+            <remarks/>
+        </member>
+        <member name="F:AspNetCore.Reporting.ReportExecutionService.ParameterTypeEnum.Boolean">
+            <remarks/>
+        </member>
+        <member name="F:AspNetCore.Reporting.ReportExecutionService.ParameterTypeEnum.DateTime">
+            <remarks/>
+        </member>
+        <member name="F:AspNetCore.Reporting.ReportExecutionService.ParameterTypeEnum.Integer">
+            <remarks/>
+        </member>
+        <member name="F:AspNetCore.Reporting.ReportExecutionService.ParameterTypeEnum.Float">
+            <remarks/>
+        </member>
+        <member name="F:AspNetCore.Reporting.ReportExecutionService.ParameterTypeEnum.String">
+            <remarks/>
+        </member>
+        <member name="T:AspNetCore.Reporting.ReportExecutionService.ValidValue">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ValidValue.Label">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ValidValue.Value">
+            <remarks/>
+        </member>
+        <member name="T:AspNetCore.Reporting.ReportExecutionService.Extension">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.Extension.ExtensionType">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.Extension.Name">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.Extension.LocalizedName">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.Extension.Visible">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.Extension.IsModelGenerationSupported">
+            <remarks/>
+        </member>
+        <member name="T:AspNetCore.Reporting.ReportExecutionService.ExtensionTypeEnum">
+            <remarks/>
+        </member>
+        <member name="F:AspNetCore.Reporting.ReportExecutionService.ExtensionTypeEnum.Delivery">
+            <remarks/>
+        </member>
+        <member name="F:AspNetCore.Reporting.ReportExecutionService.ExtensionTypeEnum.Render">
+            <remarks/>
+        </member>
+        <member name="F:AspNetCore.Reporting.ReportExecutionService.ExtensionTypeEnum.Data">
+            <remarks/>
+        </member>
+        <member name="F:AspNetCore.Reporting.ReportExecutionService.ExtensionTypeEnum.All">
+            <remarks/>
+        </member>
+        <member name="T:AspNetCore.Reporting.ReportExecutionService.DocumentMapNode">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.DocumentMapNode.Label">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.DocumentMapNode.UniqueName">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.DocumentMapNode.Children">
+            <remarks/>
+        </member>
+        <member name="T:AspNetCore.Reporting.ReportExecutionService.ExtensionSettings">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ExtensionSettings.Extension">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ExtensionSettings.ParameterValues">
+            <remarks/>
+        </member>
+        <member name="T:AspNetCore.Reporting.ReportExecutionService.ParameterFieldReference">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ParameterFieldReference.ParameterName">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ParameterFieldReference.FieldAlias">
+            <remarks/>
+        </member>
+        <member name="T:AspNetCore.Reporting.ReportExecutionService.ParameterValue">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ParameterValue.Name">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ParameterValue.Value">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ParameterValue.Label">
+            <remarks/>
+        </member>
+        <member name="T:AspNetCore.Reporting.ReportExecutionService.DataSourceCredentials">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.DataSourceCredentials.DataSourceName">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.DataSourceCredentials.UserName">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.DataSourceCredentials.Password">
+            <remarks/>
+        </member>
+        <member name="T:AspNetCore.Reporting.ReportExecutionService.Warning">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.Warning.Code">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.Warning.Severity">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.Warning.ObjectName">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.Warning.ObjectType">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.Warning.Message">
+            <remarks/>
+        </member>
+        <member name="T:AspNetCore.Reporting.ReportExecutionService.ExecutionHeader">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ExecutionHeader.ExecutionID">
+            <remarks/>
+        </member>
+        <member name="T:AspNetCore.Reporting.ReportExecutionService.ParametersGridCellDefinition">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ParametersGridCellDefinition.RowIndex">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ParametersGridCellDefinition.ColumnsIndex">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ParametersGridCellDefinition.ParameterName">
+            <remarks/>
+        </member>
+        <member name="T:AspNetCore.Reporting.ReportExecutionService.ParametersGridLayoutDefinition">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ParametersGridLayoutDefinition.NumberOfColumns">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ParametersGridLayoutDefinition.NumberOfRows">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ParametersGridLayoutDefinition.CellDefinitions">
+            <remarks/>
+        </member>
+        <member name="T:AspNetCore.Reporting.ReportExecutionService.ReportMargins">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ReportMargins.Top">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ReportMargins.Bottom">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ReportMargins.Left">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ReportMargins.Right">
+            <remarks/>
+        </member>
+        <member name="T:AspNetCore.Reporting.ReportExecutionService.ReportPaperSize">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ReportPaperSize.Height">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ReportPaperSize.Width">
+            <remarks/>
+        </member>
+        <member name="T:AspNetCore.Reporting.ReportExecutionService.PageSettings">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.PageSettings.PaperSize">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.PageSettings.Margins">
+            <remarks/>
+        </member>
+        <member name="T:AspNetCore.Reporting.ReportExecutionService.DataSourcePrompt">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.DataSourcePrompt.Name">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.DataSourcePrompt.DataSourceID">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.DataSourcePrompt.Prompt">
+            <remarks/>
+        </member>
+        <member name="T:AspNetCore.Reporting.ReportExecutionService.ServerInfoHeader">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ServerInfoHeader.ReportServerVersionNumber">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ServerInfoHeader.ReportServerEdition">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ServerInfoHeader.ReportServerVersion">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ServerInfoHeader.ReportServerDateTime">
+            <remarks/>
+        </member>
+        <member name="T:AspNetCore.Reporting.ReportExecutionService.TrustedUserHeader">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.TrustedUserHeader.UserName">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.TrustedUserHeader.UserToken">
+            <remarks/>
+        </member>
+        <member name="T:AspNetCore.Reporting.ReportExecutionService.ParameterStateEnum">
+            <remarks/>
+        </member>
+        <member name="F:AspNetCore.Reporting.ReportExecutionService.ParameterStateEnum.HasValidValue">
+            <remarks/>
+        </member>
+        <member name="F:AspNetCore.Reporting.ReportExecutionService.ParameterStateEnum.MissingValidValue">
+            <remarks/>
+        </member>
+        <member name="F:AspNetCore.Reporting.ReportExecutionService.ParameterStateEnum.HasOutstandingDependencies">
+            <remarks/>
+        </member>
+        <member name="F:AspNetCore.Reporting.ReportExecutionService.ParameterStateEnum.DynamicValuesUnavailable">
+            <remarks/>
+        </member>
+        <member name="T:AspNetCore.Reporting.ReportExecutionService.ExecutionInfo2">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ExecutionInfo2.PageCountMode">
+            <remarks/>
+        </member>
+        <member name="T:AspNetCore.Reporting.ReportExecutionService.PageCountMode">
+            <remarks/>
+        </member>
+        <member name="F:AspNetCore.Reporting.ReportExecutionService.PageCountMode.Actual">
+            <remarks/>
+        </member>
+        <member name="F:AspNetCore.Reporting.ReportExecutionService.PageCountMode.Estimate">
+            <remarks/>
+        </member>
+        <member name="T:AspNetCore.Reporting.ReportExecutionService.ExecutionInfo3">
+            <remarks/>
+        </member>
+        <member name="P:AspNetCore.Reporting.ReportExecutionService.ExecutionInfo3.ParametersLayout">
+            <remarks/>
+        </member>
+        <member name="T:AspNetCore.Reporting.ReportExecutionService.SortDirectionEnum">
+            <remarks/>
+        </member>
+        <member name="F:AspNetCore.Reporting.ReportExecutionService.SortDirectionEnum.None">
+            <remarks/>
+        </member>
+        <member name="F:AspNetCore.Reporting.ReportExecutionService.SortDirectionEnum.Ascending">
+            <remarks/>
+        </member>
+        <member name="F:AspNetCore.Reporting.ReportExecutionService.SortDirectionEnum.Descending">
+            <remarks/>
+        </member>
+    </members>
+</doc>
