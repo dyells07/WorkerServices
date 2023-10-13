@@ -1,0 +1,30 @@
+-Requirements for Rdlc report
+
+1.Dapper
+2.SqlClient
+3.System.CodeDom
+4.System.Security.Permissions
+5.System.Text.Encoding.CodePages
+6.Microsoft.Reporting.WebForms
+7.Microsoft.AspNetCore.Mvc
+8.Microsoft.ReportViewer.WebForms
+9.AspNetCore.Reporting
+
+
+Steps:
+->Create MVC Application
+->Model
+->Database
+->Repository
+->Create New .Net FrameWork(Forms)
+->Add New Item -> Report 
+
+Extensions :
+1.Microsoft.DataTools.AnalysisServices.vsix
+2.Microsoft.RdlcDesigner.vsix
+3.Microsoft.DataTools.ReportingServices.vsix
+-> Dependency Injections on Program.cs
+-> Controller with Parameter
+-> Report Create From .Net FrameWork(Forms)  (create garera afno ma main project ko Reports vanner wwwroot ma rakhne)
+-> Copy and Paste to wwwroot,create new folder your choice,paste rdlc form and start to design and pass parameters
+
