@@ -14,5 +14,11 @@
     <None Update="RDLC_D1DataSet3.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Update="RDLC_D1DataSet4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="RDLC_D1DataSet5.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
 </Project>

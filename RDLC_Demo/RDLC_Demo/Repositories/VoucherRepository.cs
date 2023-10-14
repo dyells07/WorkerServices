@@ -23,7 +23,10 @@ namespace RDLC_Demo.Models
             {
                 db.Open();
 
-                string query = "SELECT Title, Remarks, DrAmount, CrAmount FROM VoucherDetail";
+                //string procedureName = "GetVoucherDetailsWithSameVoucherName";
+                //return await db.QueryAsync<VoucherDetail>(procedureName, commandType: CommandType.StoredProcedure);
+
+                string query = "SELECT Title, Remarks, DrAmount, CrAmount,VoucherName FROM VoucherDetail";
                 return await db.QueryAsync<VoucherDetail>(query, commandType: CommandType.Text);
             }
         }

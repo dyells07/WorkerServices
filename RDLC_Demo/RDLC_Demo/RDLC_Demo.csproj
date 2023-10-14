@@ -7,10 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\Reports\GeneralVoucher.rdlc" />
     <Content Remove="wwwroot\Reports\Report1.rdlc" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="wwwroot\Reports\GeneralVoucher.rdlc" />
     <EmbeddedResource Include="wwwroot\Reports\Report1.rdlc" />
   </ItemGroup>
 
@@ -45,6 +47,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>RDLC_D1DataSet3.xsd</DependentUpon>
     </Compile>
+    <Compile Update="RDLC_D1DataSet4.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>RDLC_D1DataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="RDLC_D1DataSet5.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>RDLC_D1DataSet5.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -63,6 +75,14 @@
     <None Update="RDLC_D1DataSet3.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>RDLC_D1DataSet3.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="RDLC_D1DataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RDLC_D1DataSet4.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="RDLC_D1DataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RDLC_D1DataSet5.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
 
