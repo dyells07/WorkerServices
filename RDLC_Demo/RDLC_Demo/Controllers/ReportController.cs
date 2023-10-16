@@ -38,6 +38,8 @@ namespace RDLC_Demo.Controllers
             parameters.Add("VType", "JOURNAL VOUCHER");
             parameters.Add("CostCenter", "Main");
             parameters.Add("Date", "2080-8-23");
+            parameters.Add("Vcode", "234");
+            parameters.Add("VBarcode", "2345");
             parameters.Add("PName", "Being Paid Amount to Mr. Anunnya Baral from Cheque No:39667472");
             parameters.Add("PBBy", "Kumar Gurung");
             var Voucher = await _voucherRepository.GetVoucherDetail();

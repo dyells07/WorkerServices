@@ -51,10 +51,14 @@
           <DataField>CrAmount</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
+        <Field Name="VoucherName">
+          <DataField>VoucherName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>RDLC_D1DataSet2</rd:DataSetName>
-        <rd:SchemaPath>G:\Projects\WorkerServices\RDLC_Demo\RDLC_Demo\RDLC_D1DataSet2.xsd</rd:SchemaPath>
+        <rd:DataSetName>RDLC_D1DataSet4</rd:DataSetName>
+        <rd:SchemaPath>G:\Projects\WorkerServices\RDLC_Demo\RDLC_Demo\RDLC_D1DataSet4.xsd</rd:SchemaPath>
         <rd:TableName>VoucherDetail</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -89,7 +93,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
-            <Top>2.81945in</Top>
+            <Top>4.31945in</Top>
             <Left>0.01389in</Left>
             <Height>0.25in</Height>
             <Width>1in</Width>
@@ -111,17 +115,19 @@
                 <TextRuns>
                   <TextRun>
                     <Value>=Parameters!PName.Value</Value>
-                    <Style />
+                    <Style>
+                      <FontStyle>Italic</FontStyle>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>PName</rd:DefaultName>
-            <Top>2.81945in</Top>
+            <Top>4.31945in</Top>
             <Left>1.04167in</Left>
             <Height>0.21111in</Height>
-            <Width>3.49167in</Width>
+            <Width>4.775in</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -137,21 +143,21 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1.31042in</Width>
+                  <Width>1.06333in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.31042in</Width>
+                  <Width>1.06333in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.31042in</Width>
+                  <Width>1.06333in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.31042in</Width>
+                  <Width>1.06333in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.5in</Height>
+                  <Height>0.34167in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -163,10 +169,14 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>Title</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox15</rd:DefaultName>
@@ -193,10 +203,14 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>Remarks</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox17</rd:DefaultName>
@@ -223,10 +237,14 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>Dr Amount</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox19</rd:DefaultName>
@@ -253,10 +271,14 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>Cr Amount</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox21</rd:DefaultName>
@@ -276,7 +298,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.5in</Height>
+                  <Height>0.34167in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -288,10 +310,14 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!Title.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Title</rd:DefaultName>
@@ -318,10 +344,14 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!Remarks.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Remarks</rd:DefaultName>
@@ -348,10 +378,14 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!DrAmount.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>DrAmount</rd:DefaultName>
@@ -378,10 +412,14 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!CrAmount.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>CrAmount</rd:DefaultName>
@@ -420,10 +458,11 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <Top>0.20834in</Top>
-            <Left>0.41333in</Left>
-            <Height>1in</Height>
-            <Width>5.24167in</Width>
+            <DataSetName>Report</DataSetName>
+            <Top>0.08334in</Top>
+            <Left>0.28in</Left>
+            <Height>0.68333in</Height>
+            <Width>4.25332in</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -431,14 +470,76 @@
               </Border>
             </Style>
           </Tablix>
+          <Textbox Name="Vcode">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=Parameters!VBarcode.Value</Value>
+                    <Style>
+                      <FontFamily>3 of 9 Barcode</FontFamily>
+                      <FontSize>35pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value />
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=Parameters!Vcode.Value</Value>
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Vcode</rd:DefaultName>
+            <Top>0.13333in</Top>
+            <Left>4.905in</Left>
+            <Height>2.73612in</Height>
+            <Width>1.075in</Width>
+            <ZIndex>3</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+              <WritingMode>Rotate270</WritingMode>
+            </Style>
+          </Textbox>
         </ReportItems>
-        <Height>3.09167in</Height>
+        <Height>4.56945in</Height>
         <Style />
       </Body>
-      <Width>7.13833in</Width>
+      <Width>6.04667in</Width>
       <Page>
         <PageHeader>
-          <Height>1.13833in</Height>
+          <Height>1.56333in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -455,12 +556,15 @@
                       </Style>
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>CName</rd:DefaultName>
+              <Top>0.11667in</Top>
               <Left>0.28in</Left>
-              <Height>0.40833in</Height>
+              <Height>0.29166in</Height>
               <Width>2.89167in</Width>
               <Style>
                 <Border>
@@ -483,7 +587,9 @@
                       <Style />
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>CAddress</rd:DefaultName>
@@ -513,14 +619,16 @@
                       <Style />
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>VType</rd:DefaultName>
-              <Top>0.76611in</Top>
-              <Left>0.28in</Left>
-              <Height>0.25in</Height>
-              <Width>2.21667in</Width>
+              <Top>1.19389in</Top>
+              <Left>1.355in</Left>
+              <Height>0.32778in</Height>
+              <Width>1.81667in</Width>
               <ZIndex>2</ZIndex>
               <Style>
                 <Border>
@@ -543,7 +651,9 @@
                       <Style />
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>CostCenter</rd:DefaultName>
@@ -573,7 +683,9 @@
                       <Style />
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Date</rd:DefaultName>
@@ -599,11 +711,13 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Fields!Vno.Value</Value>
+                      <Value>=Fields!VoucherName.Value</Value>
                       <Style />
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Vno</rd:DefaultName>
@@ -634,7 +748,7 @@
                     </TextRun>
                   </TextRuns>
                   <Style>
-                    <TextAlign>Right</TextAlign>
+                    <TextAlign>Center</TextAlign>
                   </Style>
                 </Paragraph>
               </Paragraphs>
@@ -666,7 +780,7 @@
                     </TextRun>
                   </TextRuns>
                   <Style>
-                    <TextAlign>Right</TextAlign>
+                    <TextAlign>Center</TextAlign>
                   </Style>
                 </Paragraph>
               </Paragraphs>
@@ -698,7 +812,7 @@
                     </TextRun>
                   </TextRuns>
                   <Style>
-                    <TextAlign>Right</TextAlign>
+                    <TextAlign>Center</TextAlign>
                   </Style>
                 </Paragraph>
               </Paragraphs>
@@ -718,18 +832,6 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-          </ReportItems>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
-        </PageHeader>
-        <PageFooter>
-          <Height>1in</Height>
-          <PrintOnFirstPage>true</PrintOnFirstPage>
-          <PrintOnLastPage>true</PrintOnLastPage>
-          <ReportItems>
             <Textbox Name="Textbox6">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
@@ -737,48 +839,22 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Prepared by</Value>
-                      <Style />
+                      <Value>Voucher Type:</Value>
+                      <Style>
+                        <FontSize>12pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
                     </TextRun>
                   </TextRuns>
                   <Style />
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox6</rd:DefaultName>
-              <Top>0.24167in</Top>
-              <Left>0.375in</Left>
+              <Top>1.18833in</Top>
+              <Left>0.11333in</Left>
               <Height>0.25in</Height>
-              <Width>1in</Width>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="PBBy">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>=Parameters!PBBy.Value</Value>
-                      <Style />
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>PBBy</rd:DefaultName>
-              <Top>0.01667in</Top>
-              <Left>0.41333in</Left>
-              <Height>0.19167in</Height>
-              <Width>1in</Width>
-              <ZIndex>1</ZIndex>
+              <Width>1.23in</Width>
+              <ZIndex>9</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -795,13 +871,11 @@
               <Style>None</Style>
             </Border>
           </Style>
-        </PageFooter>
+        </PageHeader>
         <PageHeight>11.69in</PageHeight>
         <PageWidth>8.27in</PageWidth>
         <LeftMargin>1in</LeftMargin>
         <RightMargin>1in</RightMargin>
-        <TopMargin>1in</TopMargin>
-        <BottomMargin>1in</BottomMargin>
         <Style />
       </Page>
     </ReportSection>
@@ -835,11 +909,19 @@
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
+    <ReportParameter Name="Vcode">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="VBarcode">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>4</NumberOfColumns>
-      <NumberOfRows>2</NumberOfRows>
+      <NumberOfRows>3</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
@@ -875,6 +957,16 @@
           <ColumnIndex>3</ColumnIndex>
           <RowIndex>1</RowIndex>
           <ParameterName>PBBy</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>2</RowIndex>
+          <ParameterName>Vcode</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>2</RowIndex>
+          <ParameterName>VBarcode</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>
