@@ -1,0 +1,383 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Bytescout.BarCode.WinForms</name>
+    </assembly>
+    <members>
+        <member name="T:Bytescout.BarCode.BarcodeControl">
+            <summary>
+            Barcode control that allows to generate/draw/save barcodes.
+            </summary>
+            <example>
+            The following example illustrates how you can set properties of
+            <see cref="T:Bytescout.BarCode.BarcodeControl" /> control. This
+            example requires that BarcodeControl with barcodeControl1 name is
+            added to a form and that the <see cref="N:Bytescout.BarCode" />
+            namespace has been added to the source code for your form. You can
+            also fine tune control appearance by means of Windows Forms designer.
+            <!-- Failed to insert some or all of included XML --><include file="samples.xml" path="samples/sample[@id=&quot;barcodecontrol&quot;]/*" /></example>
+            <remarks>
+            When using this class in a Windows application, you just need to copy the
+            Bytescout.BarCode.dll file to your application's directory and add
+            reference to Bytescout.BarCode component in your project refrences.
+            </remarks>
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Bytescout.BarCode.BarcodeControl" /> class.
+            </summary>
+        </member>
+        <member name="P:Bytescout.BarCode.BarcodeControl.RegistrationName">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.BarcodeControl.RegistrationKey">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.OnResize(System.EventArgs)">
+            <summary>
+            Handles resize events of the control.
+            </summary>
+            <param name="e">An <see cref="T:System.EventArgs" /> that contains the event data.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.OnPaint(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            Handles paint events of the control.
+            </summary>
+            <param name="e">The <see cref="T:System.Windows.Forms.PaintEventArgs" /> instance containing the event data.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.BarcodeChanged(System.Object,System.EventArgs)">
+            <summary>
+            Handles changes in barcodes.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.EventArgs" /> instance containing the event data.</param>
+        </member>
+        <member name="P:Bytescout.BarCode.BarcodeControl.AdditionalCaption">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.BarcodeControl.AddChecksum">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.BarcodeControl.AddChecksumToCaption">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.BarcodeControl.Caption">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.BarcodeControl.DrawCaption">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.BarcodeControl.DrawCaptionFor2DBarcodes">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.BarcodeControl.DrawQuietZones">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.BarcodeControl.Symbology">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.BarcodeControl.Options">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.BarcodeControl.Value">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.BarcodeControl.SupplementValue">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.BarcodeControl.AdditionalCaptionFont">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.BarcodeControl.BarHeight">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.BarcodeControl.CaptionFont">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.BarcodeControl.NarrowBarWidth">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.BarcodeControl.WideToNarrowRatio">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.BarcodeControl.AdditionalCaptionPosition">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.BarcodeControl.AdditionalCaptionAlignment">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.BarcodeControl.Angle">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.BarcodeControl.ProduceMonochromeImages">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.BarcodeControl.BackColor">
+            <inheritdoc cref="P:Bytescout.BarCode.IBarcode.BackColor" />
+        </member>
+        <member name="P:Bytescout.BarCode.BarcodeControl.CaptionPosition">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.BarcodeControl.CaptionAlignment">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.BarcodeControl.ForeColor">
+            <inheritdoc cref="P:Bytescout.BarCode.IBarcode.ForeColor" />
+        </member>
+        <member name="P:Bytescout.BarCode.BarcodeControl.Margins">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.BarcodeControl.SmoothingMode">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.SetSmoothingMode(System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.BarcodeControl.RenderingHint">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.BarcodeControl.ResolutionX">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.BarcodeControl.ResolutionY">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.BarcodeControl.HorizontalAlignment">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.BarcodeControl.VerticalAlignment">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.GetMinimalSize">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.BarcodeControl.CutUnusedSpace">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.BarcodeControl.PreserveMinReadableSize">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.BarcodeControl.AutoFitToControlSize">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.BarcodeControl.RoundDots">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.BarcodeControl.RoundDotsScale">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.BarcodeControl.Version">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.BarcodeControl.LicenseInfo">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.FitInto(System.Drawing.Size)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.FitInto(System.Int32,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.FitInto(System.Drawing.SizeF,Bytescout.BarCode.UnitOfMeasure)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.FitInto(System.Single,System.Single,Bytescout.BarCode.UnitOfMeasure)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.RevertToNormalSize">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.Draw(System.Drawing.Graphics,System.Drawing.Point)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.DrawHDC(System.IntPtr,System.Int32,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.DrawHDC(System.IntPtr,System.Single,System.Single,Bytescout.BarCode.UnitOfMeasure)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.GetImage">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.SaveImage(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.SaveImage(System.String,System.Drawing.Imaging.ImageFormat)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.SaveImage(System.String,System.Drawing.Imaging.ImageFormat,System.Drawing.Size,System.Int32,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.SaveImage(System.IO.Stream)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.SaveImage(System.IO.Stream,System.Drawing.Imaging.ImageFormat)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.SaveImage(System.IO.Stream,System.Drawing.Imaging.ImageFormat,System.Drawing.Size,System.Int32,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.GetImageBytes">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.GetImageBytesEMF">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.GetImageBytesWMF">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.GetImageBytesPNG">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.GetImageBytesGIF">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.GetImageBytesTIFF">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.GetImageBytesJPG">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.ValueIsValid(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.ValueIsValid(System.String,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.ValueIsValidGS1(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.GetValueRestrictions(Bytescout.BarCode.SymbologyType)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.GetSupplementaryValueRestrictions">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.SetMargins(System.Single,System.Single,System.Single,System.Single,Bytescout.BarCode.UnitOfMeasure)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.GetMargins(System.Single@,System.Single@,System.Single@,System.Single@,Bytescout.BarCode.UnitOfMeasure)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.GetMarginLeft(Bytescout.BarCode.UnitOfMeasure)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.GetMarginTop(Bytescout.BarCode.UnitOfMeasure)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.GetMarginRight(Bytescout.BarCode.UnitOfMeasure)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.GetMarginBottom(Bytescout.BarCode.UnitOfMeasure)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.SetBarHeight(System.Single,Bytescout.BarCode.UnitOfMeasure)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.GetBarHeight(Bytescout.BarCode.UnitOfMeasure)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.SetNarrowBarWidth(System.Single,Bytescout.BarCode.UnitOfMeasure)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.GetNarrowBarWidth(Bytescout.BarCode.UnitOfMeasure)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.GetMinimalSize(Bytescout.BarCode.UnitOfMeasure)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.GetMinimalWidth(Bytescout.BarCode.UnitOfMeasure)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.GetMinimalHeight(Bytescout.BarCode.UnitOfMeasure)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.Draw(System.Drawing.Graphics,System.Single,System.Single,Bytescout.BarCode.UnitOfMeasure)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.SetCaptionFont(System.String,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.SetCaptionFont(System.String,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Byte)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.SetAdditionalCaptionFont(System.String,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.SetAdditionalCaptionFont(System.String,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Byte)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.GetPDFDimensions(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.GetPDFDimensions(System.IO.Stream)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.DrawToPDF(System.String,System.Int32,System.Int32,System.Int32,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.DrawToPDF(System.IO.Stream,System.Int32,System.Int32,System.Int32,System.IO.Stream)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.DrawToNewPDF(System.String,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.DrawToNewPDF(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.DrawImagesToPDF(System.String,System.Int32,System.Drawing.Image[],System.Drawing.Point[],System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.DrawImagesToPDF(System.String,System.Int32,System.Drawing.Image[],System.Drawing.Point[],System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.DrawImagesToPDF(System.IO.Stream,System.Int32,System.Drawing.Image[],System.Drawing.Point[],System.IO.Stream)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.DrawImagesToPDF(System.IO.Stream,System.Int32,System.Drawing.Image[],System.Drawing.Point[],System.IO.Stream,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.DrawImagesToPDF(System.String,System.String,Bytescout.BarCode.DrawImagesToPDFCallback)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.DrawImagesToPDF(System.IO.Stream,System.IO.Stream,Bytescout.BarCode.DrawImagesToPDFCallback)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.DrawToImage(System.String,System.Int32,System.Int32,System.Int32,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.DrawToImage(System.IO.Stream,System.Int32,System.Int32,System.Int32,System.IO.Stream)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.GetPdfPageCount(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.GetPdfPageCount(System.IO.Stream)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.SetForeColorRGB(System.Byte,System.Byte,System.Byte)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.SetBackColorRGB(System.Byte,System.Byte,System.Byte)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.SetCustomCaptionGap(System.Single,Bytescout.BarCode.UnitOfMeasure)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.ProcessMacros(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.AddDecorationImage(System.String,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.AddDecorationImage(System.Drawing.Image,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeControl.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+    </members>
+</doc>

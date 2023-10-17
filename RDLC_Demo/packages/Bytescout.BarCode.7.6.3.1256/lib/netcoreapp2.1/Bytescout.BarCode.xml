@@ -1,0 +1,3501 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Bytescout.BarCode</name>
+    </assembly>
+    <members>
+        <member name="T:Bytescout.BarCode.AztecCompactionMode">
+            <summary>
+            Describes all possible compaction (encoding) modes for Aztec symbology.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.AztecCompactionMode.Auto">
+            <summary>
+            (-1) Default. Library is mixing binary and ASCII encoding modes to get minimal size possible
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.AztecCompactionMode.Binary">
+            <summary>
+            (0) Library forces use of binary encoding
+            For binary encoding you can set value from byte[] array like this:
+            barcode.value = Encoding.Default.GetString(new byte[] { 0, 10, 11, 12, 13, 14, 15})
+            </summary>
+        </member>
+        <member name="T:Bytescout.BarCode.AztecErrorCorrectionLevel">
+            <summary>
+            Level of error correction in Aztec Code symbols
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.AztecErrorCorrectionLevel.Auto">
+            <summary>
+            (0) Library will choose best possible error correction level.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.AztecErrorCorrectionLevel.Level1">
+            <summary>
+            (1) Level 1 error correction. 10% of data region will be filled by error correction data.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.AztecErrorCorrectionLevel.Level2">
+            <summary>
+            (2) Level 2 error correction. 23% of data region will be filled by error correction data.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.AztecErrorCorrectionLevel.Level3">
+            <summary>
+            (3) Level 3 error correction. 36% of data region will be filled by error correction data.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.AztecErrorCorrectionLevel.Level4">
+            <summary>
+            (4) Level 1 error correction. 50% of data region will be filled by error correction data.
+            </summary>
+        </member>
+        <member name="T:Bytescout.BarCode.Barcode">
+            <summary>
+            Represents barcode generator.
+            </summary>
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Bytescout.BarCode.Barcode" /> class.
+            </summary>
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.#ctor(System.String,System.String)">
+            <summary>
+            Initializes and activates a new instance of the <see cref="T:Bytescout.BarCode.Barcode" /> class.
+            </summary>
+            <param name="registrationName">The registration name.</param>
+            <param name="registrationKey">The registration key.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.#ctor(Bytescout.BarCode.SymbologyType)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Bytescout.BarCode.Barcode" /> class.
+            </summary>
+            <param name="type">The barcode type (symbology).</param>
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.#ctor(Bytescout.BarCode.SymbologyType,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Bytescout.BarCode.Barcode" /> class.
+            </summary>
+            <param name="type">The barcode type (symbology).</param>
+            <param name="registrationName">The registration name.</param>
+            <param name="registrationKey">The registration key.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.#ctor(Bytescout.BarCode.Barcode,Bytescout.BarCode.SymbologyType)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Bytescout.BarCode.Barcode" /> class.
+            </summary>
+            <param name="prototype">The existing barcode from which to create new barcode with different symbology type.</param>
+            <param name="type">The type (symbology) of new barcode.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.ResetToNonOptimizedDefaults">
+            <summary>
+            Resets barcode options and properties to non optimized defaults.
+            </summary>
+        </member>
+        <member name="P:Bytescout.BarCode.Barcode.RegistrationName">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.Barcode.RegistrationKey">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.Barcode.TIFFUse1BitFormat">
+            <summary>
+            Gets or sets a value indicating whether TIFF images should be saved as monochrome (1-bit, black and white) images.
+            This property is obsolete since has been superseded with ProduceMonochromeImages property.
+            </summary>
+            <value>
+                <c>true</c> if Tiff images should be saved in monochrome; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.Barcode.ProduceMonochromeImages">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.Barcode.AdditionalCaption">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.Barcode.AddChecksum">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.Barcode.AddChecksumToCaption">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.Barcode.Caption">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.Barcode.DrawCaption">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.Barcode.DrawCaptionFor2DBarcodes">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.Barcode.DrawQuietZones">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.Barcode.Symbology">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.Barcode.Options">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.Barcode.Value">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.Barcode.ValueAsStream">
+            <summary>
+            Gets the copy of barcode value as stream.
+            </summary>
+            <value>The copy of barcode value as stream.</value>
+            <remarks>
+            Please use <see cref="O:Bytescout.BarCode.Barcode.LoadValueFromStream" />
+            if you want to set up value using a stream.
+            </remarks>
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.LoadValueFromStream(System.IO.Stream,System.Int32)">
+            <summary>
+            Loads the value from the given stream. Read begins from current 
+            position within a stream. 
+            </summary>
+            <overloads>Loads the value from the given stream.</overloads>
+            <param name="stream">The stream to read value from.</param>
+            <param name="length">The value's length.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.LoadValueFromStream(System.IO.Stream)">
+            <summary>
+            Loads the value from the given stream. Read begins from current
+            position within a stream. All bytes till the end of the stream
+            a considered to be a value's bytes.
+            </summary>
+            <param name="stream">The stream to read value from.</param>
+        </member>
+        <member name="P:Bytescout.BarCode.Barcode.SupplementValue">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.Barcode.AdditionalCaptionFont">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.Barcode.BarHeight">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.Barcode.CaptionFont">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.Barcode.NarrowBarWidth">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.Barcode.WideToNarrowRatio">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.Barcode.AdditionalCaptionPosition">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.Barcode.AdditionalCaptionAlignment">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.Barcode.Angle">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.Barcode.BackColor">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.Barcode.CaptionPosition">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.Barcode.CaptionAlignment">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.Barcode.ForeColor">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.Barcode.Margins">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.Barcode.SmoothingMode">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.SetSmoothingMode(System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.Barcode.RenderingHint">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.Barcode.ResolutionX">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.Barcode.ResolutionY">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.Barcode.CutUnusedSpace">
+            <summary>
+            Gets or sets a value indicating whether unused space should be cut when 
+            drawing or saving barcode images. Unused space is usually a result
+            of calling one of FitInto methods with size greater then needed
+            to draw barcode.
+            </summary>
+            <value>
+                <c>true</c> if unused space should be cut; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.Barcode.PreserveMinReadableSize">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.Barcode.RoundDots">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.Barcode.RoundDotsScale">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.Barcode.Version">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.Barcode.LicenseInfo">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.Barcode.Profiles">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.ValueIsValid(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.ValueIsValid(System.String,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.ValueIsValidGS1(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.GetMinimalSize">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.LoadProfiles(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.LoadProfilesFromString(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.LoadAndApplyProfiles(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.CreateProfile(System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.CreateProfile(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.FitInto(System.Drawing.Size)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.FitInto(System.Int32,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.FitInto(System.Drawing.SizeF,Bytescout.BarCode.UnitOfMeasure)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.FitInto(System.Single,System.Single,Bytescout.BarCode.UnitOfMeasure)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.RevertToNormalSize">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.Draw(System.Drawing.Graphics,System.Drawing.Point)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.DrawHDC(System.IntPtr,System.Int32,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.GetImage">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.SaveImage(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.SaveImage(System.String,System.Drawing.Imaging.ImageFormat)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.SaveImage(System.String,System.Drawing.Imaging.ImageFormat,System.Drawing.Size,System.Int32,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.SaveImage(System.IO.Stream)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.SaveImage(System.IO.Stream,System.Drawing.Imaging.ImageFormat)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.SaveImage(System.IO.Stream,System.Drawing.Imaging.ImageFormat,System.Drawing.Size,System.Int32,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.GetImageBytes">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.GetImageBytesEMF">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.GetImageBytesWMF">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.GetImageBytesPNG">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.GetImageBytesGIF">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.GetImageBytesTIFF">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.GetImageBytesJPG">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.GetValueRestrictions(Bytescout.BarCode.SymbologyType)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.GetSupplementaryValueRestrictions">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.SetCaptionFont(System.String,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.SetCaptionFont(System.String,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Byte)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.SetAdditionalCaptionFont(System.String,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.SetAdditionalCaptionFont(System.String,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Byte)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.SetMargins(System.Single,System.Single,System.Single,System.Single,Bytescout.BarCode.UnitOfMeasure)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.GetMargins(System.Single@,System.Single@,System.Single@,System.Single@,Bytescout.BarCode.UnitOfMeasure)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.GetMarginLeft(Bytescout.BarCode.UnitOfMeasure)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.GetMarginTop(Bytescout.BarCode.UnitOfMeasure)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.GetMarginRight(Bytescout.BarCode.UnitOfMeasure)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.GetMarginBottom(Bytescout.BarCode.UnitOfMeasure)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.SetBarHeight(System.Single,Bytescout.BarCode.UnitOfMeasure)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.GetBarHeight(Bytescout.BarCode.UnitOfMeasure)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.SetNarrowBarWidth(System.Single,Bytescout.BarCode.UnitOfMeasure)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.GetNarrowBarWidth(Bytescout.BarCode.UnitOfMeasure)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.GetMinimalSize(Bytescout.BarCode.UnitOfMeasure)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.GetMinimalWidth(Bytescout.BarCode.UnitOfMeasure)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.GetMinimalHeight(Bytescout.BarCode.UnitOfMeasure)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.Draw(System.Drawing.Graphics,System.Single,System.Single,Bytescout.BarCode.UnitOfMeasure)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.DrawHDC(System.IntPtr,System.Single,System.Single,Bytescout.BarCode.UnitOfMeasure)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.DrawToImage(System.String,System.Int32,System.Int32,System.Int32,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.DrawToImage(System.IO.Stream,System.Int32,System.Int32,System.Int32,System.IO.Stream)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.SetForeColorRGB(System.Byte,System.Byte,System.Byte)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.SetBackColorRGB(System.Byte,System.Byte,System.Byte)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.SetCustomCaptionGap(System.Single,Bytescout.BarCode.UnitOfMeasure)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.Is2DSymblogy(Bytescout.BarCode.SymbologyType)">
+            <summary>
+            Determines whether the symbology is of 2D type.
+            </summary>
+            <param name="symbology">Barcode type to check whether it's of 2D type.</param>
+            <returns>
+                <c>True</c> if the specified symbology is of 2D type.</returns>
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.ProcessMacros(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.AddDecorationImage(System.String,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.AddDecorationImage(System.Drawing.Image,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.Barcode.DefaultPDFPageSize">
+            <summary>
+            Gets or sets the default size of the PDF page.
+            </summary>
+            <value>The default size of the PDF page.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.Barcode.DefaultPDFPageWidth">
+            <summary>
+            Gets or sets the default width of the PDF page.
+            </summary>
+            <value>The default width of the PDF page (in document units).</value>
+        </member>
+        <member name="P:Bytescout.BarCode.Barcode.DefaultPDFPageHeight">
+            <summary>
+            Gets or sets the default height of the PDF page.
+            </summary>
+            <value>The default height of the PDF page (in document units).</value>
+        </member>
+        <member name="P:Bytescout.BarCode.Barcode.DefaultPDFBarCodeX">
+            <summary>
+            Gets or sets X coordinate of default barcode position.
+            </summary>
+            <value>The default X coordinate of barcode (in document units).</value>
+        </member>
+        <member name="P:Bytescout.BarCode.Barcode.DefaultPDFBarCodeY">
+            <summary>
+            Gets or sets Y coordinate of default barcode position.
+            </summary>
+            <value>The default Y coordinate of barcode (in document units).</value>
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.GetPDFDimensions(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.GetPDFDimensions(System.IO.Stream)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.DrawToPDF(System.String,System.Int32,System.Int32,System.Int32,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.DrawToPDF(System.IO.Stream,System.Int32,System.Int32,System.Int32,System.IO.Stream)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.DrawToNewPDF(System.String,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.DrawToNewPDF(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.DrawImagesToPDF(System.String,System.Int32,System.Drawing.Image[],System.Drawing.Point[],System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.DrawImagesToPDF(System.String,System.Int32,System.Drawing.Image[],System.Drawing.Point[],System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.DrawImagesToPDF(System.IO.Stream,System.Int32,System.Drawing.Image[],System.Drawing.Point[],System.IO.Stream)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.DrawImagesToPDF(System.IO.Stream,System.Int32,System.Drawing.Image[],System.Drawing.Point[],System.IO.Stream,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.DrawImagesToPDF(System.String,System.String,Bytescout.BarCode.DrawImagesToPDFCallback)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.DrawImagesToPDF(System.IO.Stream,System.IO.Stream,Bytescout.BarCode.DrawImagesToPDFCallback)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.GetPdfPageCount(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.Barcode.GetPdfPageCount(System.IO.Stream)">
+            <inheritdoc />
+        </member>
+        <member name="T:Bytescout.BarCode.BarcodeException">
+            <summary>
+            Represents errors that occur during Bytescout.BarCode class library execution.
+            </summary>
+            <example>
+            The following example demonstrates usage of <see cref="T:Bytescout.BarCode.BarcodeException" /> class.
+            <code language="vb"><![CDATA[
+Imports System
+
+Imports Bytescout.BarCode
+
+Namespace ConsoleApplication1
+
+Class Program
+    Private Shared Sub Main(args As String())
+        Dim bc As New Barcode(SymbologyType.Code128)
+        bc.Options.Code128Alphabet = Code128Alphabet.C
+
+        Try
+            bc.Value = "DATA"
+        Catch e As BarcodeException
+            Console.WriteLine("BarcodeException Handler: {0}", e.ToString())
+        Catch e As Exception
+            Console.WriteLine("Generic Exception Handler: {0}", e.ToString())
+        End Try
+End Sub
+End Class
+
+End Namespace
+
+'
+'This code example produces the following results:
+'
+' BarcodeException Handler: Bytescout.Barcode.BarcodeException: provided value 
+' can't be encoded by current symbology.
+' Code 128 Alphabet C allows only numeric values with even length.
+'     at Bytescout.BarCode.Internal.SymbologyDrawing.set_Value(String value)
+'
+            ]]></code><code language="c#"><![CDATA[
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Barcode bc = new Barcode(SymbologyType.Code128);
+            bc.Options.Code128Alphabet = Code128Alphabet.C;
+
+            try
+            {
+                bc.Value = "DATA";
+            }
+            catch (BarcodeException e)
+            {
+                Console.WriteLine("BarcodeException Handler: {0}", e.ToString());
+             }
+             catch (Exception e) 
+             {
+                Console.WriteLine("Generic Exception Handler: {0}", e.ToString());
+             }
+        }
+    }
+}
+
+// 
+// This code example produces the following results:
+// 
+// BarcodeException Handler: Bytescout.Barcode.BarcodeException: provided value 
+// can't be encoded by current symbology.
+// Code 128 Alphabet C allows only numeric values with even length.
+//     at Bytescout.BarCode.Internal.SymbologyDrawing.set_Value(String value)
+//
+            ]]></code></example>
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Bytescout.BarCode.BarcodeException" /> class with a specified error message.
+            </summary>
+            <param name="message">The exception message that describes the error.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodeException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Bytescout.BarCode.BarcodeException" /> class with a specified error message and inner exception.
+            </summary>
+            <param name="message">The exception message that describes the error.</param>
+            <param name="internalException">The Inner exception</param>
+        </member>
+        <member name="T:Bytescout.BarCode.BarcodeHorizontalAlignment">
+            <summary>
+            Describes options for horizontal alignment of the barcode within the target rectangle.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.BarcodeHorizontalAlignment.Left">
+            <summary>
+            (0) Align the barcode to the left edge of the target rectangle.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.BarcodeHorizontalAlignment.Center">
+            <summary>
+            (1) Horizontally center the barcode in the target rectangle.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.BarcodeHorizontalAlignment.Right">
+            <summary>
+            (2) Align the barcode to the right edge of the target rectangle.
+            </summary>
+        </member>
+        <member name="T:Bytescout.BarCode.BarcodePrinter">
+            <summary>
+            Represents a class that prints barcodes using a printer.
+            </summary>
+        </member>
+        <member name="P:Bytescout.BarCode.BarcodePrinter.Margins">
+            <summary>
+            Gets or sets the margins for printed page. 
+            </summary>
+            <value>
+            A <see cref="T:System.Drawing.Printing.Margins" /> that represents the margins, in hundredths of an inch, for the page. 
+            The default is no margins on all sides because PDF documents usually contains margins already.
+            </value>
+        </member>
+        <member name="P:Bytescout.BarCode.BarcodePrinter.Landscape">
+            <summary>
+            Gets or sets a value indicating whether the page is printed in landscape or portrait orientation.
+            </summary>
+        </member>
+        <member name="P:Bytescout.BarCode.BarcodePrinter.Copies">
+            <summary>
+            Gets or sets the number of copies of the document to print.
+            <para>Note: Not all printers support printing multiple copes.</para></summary>
+        </member>
+        <member name="P:Bytescout.BarCode.BarcodePrinter.Collate">
+            <summary>
+            Gets or sets a value indicating whether the printed document is collated.
+            </summary>
+        </member>
+        <member name="P:Bytescout.BarCode.BarcodePrinter.Duplex">
+            <summary>
+            Gets or sets the printer setting for double-sided printing (duplex). To set duplex mode by name use
+            the <see cref="M:Bytescout.BarCode.BarcodePrinter.SetDuplex(System.String)" /> method.
+            <para>Note: Not all printers support the duplex printing.</para></summary>
+        </member>
+        <member name="P:Bytescout.BarCode.BarcodePrinter.Color">
+            <summary>
+            Gets or sets a value indicating whether the page should be printed in color.
+            </summary>
+        </member>
+        <member name="P:Bytescout.BarCode.BarcodePrinter.PaperSize">
+            <summary>
+            Gets or sets the paper size for the page. To set paper size by name use the <see cref="M:Bytescout.BarCode.BarcodePrinter.SetPaperSize(System.String)" /> method.
+            </summary>
+            <value>
+                <see cref="T:System.Drawing.Printing.PaperSize" /> object.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.BarcodePrinter.PaperSource">
+            <summary>
+            Gets or sets the page's paper source; for example, the printer's upper tray. 
+            To set paper source by its predefined name use the <see cref="M:Bytescout.BarCode.BarcodePrinter.SetPaperSource(System.String)" /> method.
+            </summary>
+            <value>
+                <see cref="T:System.Drawing.Printing.PaperSource" /> object.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.BarcodePrinter.PrinterResolution">
+            <summary>
+            Gets or sets the printer resolution for the page. To set resolution by its predefined name 
+            use the <see cref="M:Bytescout.BarCode.BarcodePrinter.SetPrinterResolution(System.String)" /> method. To set custom resolution use
+            the <see cref="M:Bytescout.BarCode.BarcodePrinter.SetPrinterResolution(System.Int32,System.Int32)" /> method.
+            </summary>
+            <value>
+                <see cref="T:System.Drawing.Printing.PrinterResolution" /> object.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.BarcodePrinter.FitBarcodesIntoGrid">
+            <summary>
+            Gets or sets whether to fit the size of the generated barcodes into the grid cell size.
+            </summary>
+            <seealso cref="M:Bytescout.BarCode.BarcodePrinter.SetGrid(System.Int32,System.Int32)" />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodePrinter.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Bytescout.BarCode.BarcodePrinter" /> class.
+            </summary>
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodePrinter.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodePrinter.SetMargins(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Sets the margins for the printed page. 
+            </summary>
+            <param name="leftMargin">Left margin in hundredths of an inch.</param>
+            <param name="topMargin">Top margin in hundredths of an inch.</param>
+            <param name="rightMargin">Right margin in hundredths of an inch.</param>
+            <param name="bottomMargin">Bottom margin in hundredths of an inch.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodePrinter.SetPaperSize(System.String)">
+            <summary>
+            Sets paper format by predefined name, such as "A4" or "Letter". The predefined names
+            of paper formats should correspond to the <see cref="T:System.Drawing.Printing.PaperKind" /> enumeration.
+            </summary>
+            <param name="paperFormat">Name of the paper format.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodePrinter.SetDuplex(System.String)">
+            <summary>
+            Sets duplex mode by predefined name. The predefined names of duplex modes should correspond
+            to the <see cref="T:System.Drawing.Printing.Duplex" /> enumeration.
+            </summary>
+            <param name="duplexModeName">Name of the duplex mode.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodePrinter.SetPaperSource(System.String)">
+            <summary>
+            Sets paper source by predefined name. The names of predefined paper sources should correspond
+            to the <see cref="T:System.Drawing.Printing.PaperSourceKind" /> enumeration.
+            </summary>
+            <param name="paperSourceName">Paper source name.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodePrinter.SetPrinterResolution(System.String)">
+            <summary>
+            Sets printer resolution by predefined name such as "High" or "Draft". The names of predefined resolutions
+            should correspond to the <see cref="T:System.Drawing.Printing.PrinterResolutionKind" /> enumeration.
+            </summary>
+            <param name="printerResolutionName">Name of predefined resolution value.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodePrinter.SetPrinterResolution(System.Int32,System.Int32)">
+            <summary>
+            Sets custom printer resolution.
+            </summary>
+            <param name="horizontalResolution">Horizontal resolution value.</param>
+            <param name="verticalResolution">Vertical resolution value.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodePrinter.SetGrid(System.Int32,System.Int32)">
+            <summary>
+            Sets dimensions of the grid that will be used to allocate generated barcodes on a page.
+            </summary>
+            <param name="rows">Number of rows in the grid.</param>
+            <param name="columns">Number of columns in the grid.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodePrinter.AddBarcodeValue(System.String)">
+            <summary>
+            Adds barcode value that will be used to generate barcodes for printing.
+            </summary>
+            <param name="barcodeValue">Barcode value.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodePrinter.AddBarcodeValues(System.Collections.IEnumerable)">
+            <summary>
+            Adds barcode values that will be used to generate barcodes for printing.
+            </summary>
+            <param name="values">Collection of barcode values.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.BarcodePrinter.Print(Bytescout.BarCode.Barcode,System.String)">
+            <summary>
+            Prints barcodes to specified printer.
+            </summary>
+            <param name="barcodeInstance">Prepared <see cref="T:Bytescout.BarCode.Barcode" /> instance that will be used
+            to generate barcode images with values that you added using <see cref="M:Bytescout.BarCode.BarcodePrinter.AddBarcodeValue(System.String)" />
+            and <see cref="M:Bytescout.BarCode.BarcodePrinter.AddBarcodeValues(System.Collections.IEnumerable)" /> methods.</param>
+            <param name="printerName">Printer name.</param>
+        </member>
+        <member name="T:Bytescout.BarCode.BarcodeVerticalAlignment">
+            <summary>
+            Describes options for vertical alignment of the barcode within the target rectangle.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.BarcodeVerticalAlignment.Top">
+            <summary>
+            (0) Align the barcode to the top edge of the target rectangle.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.BarcodeVerticalAlignment.Middle">
+            <summary>
+            (1) Vertically center the barcode in the target rectangle.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.BarcodeVerticalAlignment.Bottom">
+            <summary>
+            (2) Align the barcode to the bottom edge of the target rectangle.
+            </summary>
+        </member>
+        <member name="T:Bytescout.BarCode.IBarCodeContainer">
+            <summary>
+            Base interface for all barcode containers (controls and such).
+            </summary>
+        </member>
+        <member name="P:Bytescout.BarCode.IBarCodeContainer.HorizontalAlignment">
+            <summary>
+            Gets or sets the horizontal alignment of the barcode within the container.
+            </summary>
+            <value>The horizontal alignment of the barcode within the container.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.IBarCodeContainer.VerticalAlignment">
+            <summary>
+            Gets or sets the vertical alignment of the barcode within the container.
+            </summary>
+            <value>The vertical alignment of the barcode within the container.</value>
+        </member>
+        <member name="T:Bytescout.BarCode.CaptionPosition">
+            <summary>
+            Describes options for barcode caption position.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.CaptionPosition.Above">
+            <summary>
+            (0) Caption above the barcode.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.CaptionPosition.Below">
+            <summary>
+            (1) Caption below the barcode.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.CaptionPosition.Before">
+            <summary>
+            (2) Caption before the barcode (at left).
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.CaptionPosition.After">
+            <summary>
+            (3) Caption after the barcode (at right).
+            </summary>
+        </member>
+        <member name="T:Bytescout.BarCode.CaptionAlignment">
+            <summary>
+            Describes options for barcode caption alignment.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.CaptionAlignment.Auto">
+            <summary>
+            (0) Automatic alignment. 
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.CaptionAlignment.Left">
+            <summary>
+            (1) Align caption text to the left.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.CaptionAlignment.Center">
+            <summary>
+            (2) Align caption text to the center.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.CaptionAlignment.Right">
+            <summary>
+            (3) Align caption text to the right.
+            </summary>
+        </member>
+        <member name="T:Bytescout.BarCode.CodabarChecksumAlgorithm">
+            <summary>
+            Describes all supported Codabar checksum algorithms.
+            </summary>
+            <remarks>
+            Note that there is no checksum defined as part of the Codabar standard, but some industries 
+            (libraries, for example) have adopted their own checksum standards. Bytescout.BarCode
+            implements two such standards.
+            </remarks>
+        </member>
+        <member name="F:Bytescout.BarCode.CodabarChecksumAlgorithm.Modulo9">
+            <summary>
+            (0) Modulo 9 checksum algorithm.
+            <para>
+            Many libraries use the following system which includes 13 digits 
+            plus a checksum;
+            </para><para>
+            Digit 1 indicates the type of barcode: 2 = patron, 3 = item (book)
+            </para><para>
+            Digits 2-5 identify the institution
+            </para><para>
+            The next 6 digits (00010 586) identify the individual patron or item
+            </para><para>
+            Digit 14 is the checksum
+            </para></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.CodabarChecksumAlgorithm.AiimCheckDigit">
+            <summary>
+            (1) AIIM check digit calculation algorithm. This standard is recommended by AIIM.
+            </summary>
+        </member>
+        <member name="T:Bytescout.BarCode.CodabarSpecialSymbol">
+            <summary>
+            Describes special symbols of the Codabar symbology.
+            This symbols can be set as Codabar start or termination symbols.
+            Additional data can be encoded by the choice of start and termination characters.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.CodabarSpecialSymbol.A">
+            <summary>
+            (0) The A symbol.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.CodabarSpecialSymbol.B">
+            <summary>
+            (1) The B symbol.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.CodabarSpecialSymbol.C">
+            <summary>
+            (2) The C symbol.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.CodabarSpecialSymbol.D">
+            <summary>
+            (3) The D symbol
+            </summary>
+        </member>
+        <member name="T:Bytescout.BarCode.Code128Alphabet">
+            <summary>
+            Describes alphabet options for Code 128 symbology.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.Code128Alphabet.Auto">
+            <summary>
+            (0) The alphabet to use selected automatically.
+            Different parts of a barcode can be encoded with different alphabets.
+            This alphabet type allows all ASCII table to be encoded with
+            minimum output barcode width.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.Code128Alphabet.A">
+            <summary>
+            (1) The A alphabet. Allows only character from NUL (ASCII 0) to 
+            '_' (ASCII 95) to be encoded.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.Code128Alphabet.B">
+            <summary>
+            (2) The B alphabet. Allows only character from SPACE (ASCII 32) to 
+            DEL (ASCII 127) to be encoded.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.Code128Alphabet.C">
+            <summary>
+            (3) The C alphabet. Allows only numeric values having even length to
+            be encoded. This alphabet allows most efficient encoding
+            of numeric values having even length.
+            </summary>
+        </member>
+        <member name="T:Bytescout.BarCode.DataMatrixCompactionMode">
+            <summary>
+            Describes all possible compaction (encoding) modes for DataMatrix symbology.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.DataMatrixCompactionMode.Auto">
+            <summary>
+            (-1) Library will choose best compaction mode (aim is to produce shortest encoded byte string).
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.DataMatrixCompactionMode.Ascii">
+            <summary>
+            (0) ASCII compaction mode. Sort of 'general purpose' mode. One encoded symbol 
+            produced from: 1/2 of source symbol for ASCII characters with code from 128 to 255,
+            1 source symbol for ASCII characters with code from 0 to 127,
+            2 source symbols for ASCII digits.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.DataMatrixCompactionMode.C40">
+            <summary>
+            (1) C40 compaction mode. Best for upper-case alphanumeric strings. One encoded
+            symbol produced from 1 and 1/2 of source symbols.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.DataMatrixCompactionMode.Text">
+            <summary>
+            (2) TEXT compaction mode. Best for lower-case alphanumeric strings. One encoded
+            symbol produced from 1 and 1/2 of source symbols.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.DataMatrixCompactionMode.X12">
+            <summary>
+            (3) X12 compaction mode. Useful for encoding symbols from 
+            " 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ\r*&gt;" range. One encoded
+            symbol produced from 1 and 1/2 of source symbols.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.DataMatrixCompactionMode.Edifact">
+            <summary>
+            (4) EDIFACT compaction mode. Best for ASCII charcters with codes
+            from 32 to 94. One encoded symbol produced from 1 and 1/3 of
+            source symbols.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.DataMatrixCompactionMode.Binary">
+            <summary>
+            (5) BINARY (or BASE256) compaction mode. Can encoded all ASCII symbols.
+            One encoded symbol produced from one source symbol.
+            </summary>
+        </member>
+        <member name="T:Bytescout.BarCode.DataMatrixSize">
+            <summary>
+            Describes all possible matrix sizes for DataMatrix symbology.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.DataMatrixSize.AutoSquareSize">
+            <summary>
+            (0) Library will choose smallest possible square matrix size.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.DataMatrixSize.AutoSize">
+            <summary>
+            (1) Library will choose smallest possible matrix size.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.DataMatrixSize.Size8x18">
+            <summary>
+            (2) 8 rows x 18 columns. 1 data region.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.DataMatrixSize.Size8x32">
+            <summary>
+            (3) 8 rows x 32 columns. 2 data regions.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.DataMatrixSize.Size10x10">
+            <summary>
+            (4) 10 rows x 10 columns. 1 data region.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.DataMatrixSize.Size12x12">
+            <summary>
+            (5) 12 rows x 12 columns. 1 data region.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.DataMatrixSize.Size12x26">
+            <summary>
+            (6) 12 rows x 26 columns. 1 data region.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.DataMatrixSize.Size12x36">
+            <summary>
+            (7) 12 rows x 36 columns. 2 vertical data regions.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.DataMatrixSize.Size14x14">
+            <summary>
+            (8) 14 rows x 14 columns. 1 data region.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.DataMatrixSize.Size16x16">
+            <summary>
+            (9) 16 rows x 16 columns. 1 data region.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.DataMatrixSize.Size16x36">
+            <summary>
+            (10) 16 rows x 36 columns. 2 vertical data regions.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.DataMatrixSize.Size16x48">
+            <summary>
+            (11) 16 rows x 48 columns. 2 vertical data regions.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.DataMatrixSize.Size18x18">
+            <summary>
+            (12) 18 rows x 18 columns. 1 data region.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.DataMatrixSize.Size20x20">
+            <summary>
+            (13) 20 rows x 20 columns. 1 data region.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.DataMatrixSize.Size22x22">
+            <summary>
+            (14) 22 rows x 22 columns. 1 data region.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.DataMatrixSize.Size24x24">
+            <summary>
+            (15) 24 rows x 24 columns. 1 data region.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.DataMatrixSize.Size26x26">
+            <summary>
+            (16) 26 rows x 26 columns. 1 data region.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.DataMatrixSize.Size32x32">
+            <summary>
+            (17) 32 rows x 32 columns. 2 x 2 data regions.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.DataMatrixSize.Size36x36">
+            <summary>
+            (18) 36 rows x 36 columns. 2 x 2 data regions.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.DataMatrixSize.Size40x40">
+            <summary>
+            (19) 40 rows x 40 columns. 2 x 2 data regions.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.DataMatrixSize.Size44x44">
+            <summary>
+            (20) 44 rows x 44 columns. 2 x 2 data regions.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.DataMatrixSize.Size48x48">
+            <summary>
+            (21) 48 rows x 48 columns. 2 x 2 data regions.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.DataMatrixSize.Size52x52">
+            <summary>
+            (22) 52 rows x 52 columns. 2 x 2 data regions.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.DataMatrixSize.Size64x64">
+            <summary>
+            (23) 64 rows x 64 columns. 4 x 4 data regions.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.DataMatrixSize.Size72x72">
+            <summary>
+            (24) 72 rows x 72 columns. 4 x 4 data regions.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.DataMatrixSize.Size80x80">
+            <summary>
+            (25) 80 rows x 80 columns. 4 x 4 data regions.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.DataMatrixSize.Size88x88">
+            <summary>
+            (26) 88 rows x 88 columns. 4 x 4 data regions.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.DataMatrixSize.Size96x96">
+            <summary>
+            (27) 96 rows x 96 columns. 4 x 4 data regions.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.DataMatrixSize.Size104x104">
+            <summary>
+            (28) 104 rows x 104 columns. 4 x 4 data regions.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.DataMatrixSize.Size120x120">
+            <summary>
+            (29) 120 rows x 120 columns. 6 x 6 data regions.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.DataMatrixSize.Size132x132">
+            <summary>
+            (30) 132 rows x 132 columns. 6 x 6 data regions.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.DataMatrixSize.Size144x144">
+            <summary>
+            (31) 144 rows x 144 columns. 6 x 6 data regions.
+            </summary>
+        </member>
+        <member name="T:Bytescout.BarCode.DrawImagesToPDFCallback">
+            <summary>
+            Delegate for the callback method called from <see cref="M:Bytescout.BarCode.Barcode.DrawImagesToPDF(System.String,System.String,Bytescout.BarCode.DrawImagesToPDFCallback)" />.
+            </summary>
+            <param name="pageIndex">Index of page being processed.</param>
+            <param name="images">Array of Image objects to draw on PDF page.</param>
+            <param name="points">Array of upper-left points of images (in document units).</param>
+            <param name="documentLayerName">Name for new PDF layer to place images on. If null or empty, no new layer will be created.</param>
+        </member>
+        <member name="T:Bytescout.BarCode.IBarcode">
+            <summary>
+            Base interface for all barcode classes.
+            </summary>
+        </member>
+        <member name="P:Bytescout.BarCode.IBarcode.AdditionalCaption">
+            <summary>
+            Gets or sets the additional barcode caption text to draw.
+            </summary>
+            <value>The additional barcode caption text to draw.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.IBarcode.AddChecksum">
+            <summary>
+            Gets or sets a value indicating whether checksum should be added to barcode.
+            </summary>
+            <value>
+                <c>true</c> if checksum should be added to barcode; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.IBarcode.AddChecksumToCaption">
+            <summary>
+            Gets or sets a value indicating whether checksum should be added to barcode caption.
+            </summary>
+            <value>
+                <c>True</c> if checksum should be added to barcode caption; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Bytescout.BarCode.IBarcode.Caption">
+            <summary>
+            Gets or sets the barcode caption (by default this is encoded value).
+            </summary>
+            <value>The barcode caption.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.IBarcode.DrawCaption">
+            <summary>
+            Gets or sets a value indicating whether to draw the barcode encoded value.
+            </summary>
+            <value>
+                <c>true</c> if to draw the barcode encoded value; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.IBarcode.DrawCaptionFor2DBarcodes">
+            <summary>
+            Gets or sets a value indicating whether to draw the barcode encoded value for 2D barcodes.
+            </summary>
+            <value>
+                <c>True</c> if to draw the barcode encoded value for 2D barcodes; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Bytescout.BarCode.IBarcode.DrawQuietZones">
+            <summary>
+            Gets or sets a value indicating whether to draw quite zones when
+            barcode type supposes such zones.
+            </summary>
+        </member>
+        <member name="P:Bytescout.BarCode.IBarcode.Symbology">
+            <summary>
+            Gets or sets the barcode symbology type.
+            </summary>
+            <value>The barcode symbology type.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.IBarcode.Options">
+            <summary>
+            Gets or sets the barcode symbology specific options.
+            </summary>
+            <value>The barcode symbology specific options.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.IBarcode.Value">
+            <summary>
+            Gets or sets the barcode value to encode.
+            </summary>
+            <value>The barcode value to encode.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.IBarcode.SupplementValue">
+            <summary>
+            Gets or sets the supplementary barcode value to encode (used 
+            with EAN-13, ISBN and UPC-A barcodes).
+            </summary>
+            <value>The supplementary barcode value to encode.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.IBarcode.RegistrationName">
+            <summary>
+            Gets or sets the name part of the registration information.
+            </summary>
+            <value>The name part of the registration information.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.IBarcode.RegistrationKey">
+            <summary>
+            Gets or sets the key number part of registration information.
+            </summary>
+            <value>The key number part of registration information.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.IBarcode.AdditionalCaptionPosition">
+            <summary>
+            Gets or sets the position of the additional caption.
+            </summary>
+            <value>The additional caption position.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.IBarcode.AdditionalCaptionAlignment">
+            <summary>
+            Gets or sets text alignment of the additional barcode caption.
+            </summary>
+            <value>Caption alignment.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.IBarcode.Angle">
+            <summary>
+            Gets or sets the barcode rotation angle in degrees.
+            </summary>
+            <value>The barcode rotation angle in degrees.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.IBarcode.ResolutionX">
+            <summary>
+            Gets or sets the horizontal resolution of barcode.
+            </summary>
+            <value>The horizontal resolution of barcode.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.IBarcode.ResolutionY">
+            <summary>
+            Gets or sets the vertical resolution of barcode.
+            </summary>
+            <value>The vertical resolution of barcode.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.IBarcode.SmoothingMode">
+            <summary>
+            Gets or sets the barcode rendering quality.
+            </summary>
+            <value>The barcode rendering quality.</value>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.SetSmoothingMode(System.Boolean)">
+            <summary>
+            Sets the barcode rendering quality. 
+            </summary>
+            <param name="smooth">Set <c>True</c> for anti-aliasing, otherwise <c>False</c>.</param>
+            <remarks>This method does the same as <see cref="P:Bytescout.BarCode.IBarcode.SmoothingMode" /> property. It is intended to use from ActiveX COM interface since SmoothingMode is not available there.</remarks>
+        </member>
+        <member name="P:Bytescout.BarCode.IBarcode.RenderingHint">
+            <summary>
+            Gets or sets the text rendering quality.
+            </summary>
+            <value>The rendering quality.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.IBarcode.ProduceMonochromeImages">
+            <summary>
+            Gets or sets a value indicating whether the component should produce monochrome (1-bit, black and white) images.
+            </summary>
+            <remarks>Note: 1-bit monochrome images can be created only in BMP, PNG and TIFF image formats.</remarks>
+            <value>
+                <c>true</c> if images should be saved in monochrome format; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.IBarcode.BackColor">
+            <summary>
+            Gets or sets the color used to draw the barcode background.
+            </summary>
+            <value>The color used to draw the barcode background.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.IBarcode.CaptionPosition">
+            <summary>
+            Gets or sets the position of the barcode caption.
+            </summary>
+            <value>The barcode caption position.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.IBarcode.CaptionAlignment">
+            <summary>
+            Gets or sets the alignment of barcode caption text.
+            </summary>
+            <value>Caption alignment.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.IBarcode.ForeColor">
+            <summary>
+            Gets or sets the color used to draw the barcode bars and caption(s).
+            </summary>
+            <value>The color used to draw the barcode bars and caption(s).</value>
+        </member>
+        <member name="P:Bytescout.BarCode.IBarcode.Margins">
+            <summary>
+            Gets or sets the barcode margins in pixels.
+            </summary>
+            <value>The barcode margins in pixels.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.IBarcode.AdditionalCaptionFont">
+            <summary>
+            Gets or sets the font of the additional barcode caption.
+            </summary>
+            <value>The additional barcode caption font.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.IBarcode.BarHeight">
+            <summary>
+            Gets or sets the height of the barcode bars in pixels.
+            </summary>
+            <value>The height of the barcode bars in pixels.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.IBarcode.CaptionFont">
+            <summary>
+            Gets or sets the font of the barcode caption.
+            </summary>
+            <value>The barcode caption font.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.IBarcode.NarrowBarWidth">
+            <summary>
+            Gets or sets the width of the narrow bar in pixels.
+            </summary>
+            <value>The width of the narrow bar in pixels.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.IBarcode.WideToNarrowRatio">
+            <summary>
+            Gets or sets the width of the wide bar relative to the narrow bar.
+            </summary>
+            <value>The width of the wide bar relative to the narrow bar.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.IBarcode.CutUnusedSpace">
+            <summary>
+            Gets or sets a value indicating whether unused space should be cut when 
+            drawing or saving barcode images. Unused space is usually a result
+            of calling one of FitInto methods with size greater then needed
+            to draw barcode.
+            </summary>
+            <value>
+                <c>true</c> if unused space should be cut; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.IBarcode.PreserveMinReadableSize">
+            <summary>
+            Gets or sets a value indicating whether to check output size so it's
+            not less than barcode size. 
+            Use FitInto() method to fit barcode into a given physical size.
+            </summary>
+            <value>A value indicating whether to check output size so it's
+            not less than barcode size.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.IBarcode.RoundDots">
+            <summary>
+            Sets whether to generate barcodes with round dots. Works only for QR Code, DataMatrix,
+            and Aztec barcode types.
+            </summary>
+        </member>
+        <member name="P:Bytescout.BarCode.IBarcode.RoundDotsScale">
+            <summary>
+            Scale factor for <see cref="P:Bytescout.BarCode.IBarcode.RoundDots" /> in percents.
+            </summary>
+        </member>
+        <member name="P:Bytescout.BarCode.IBarcode.Version">
+            <summary>
+             Gets the component version number.
+            </summary>
+        </member>
+        <member name="P:Bytescout.BarCode.IBarcode.LicenseInfo">
+            <summary>
+            Gets license information.
+            </summary>
+        </member>
+        <member name="P:Bytescout.BarCode.IBarcode.Profiles">
+            <summary>
+            Comma-separated list of profiles to apply to the <see cref="T:Bytescout.BarCode.Barcode" />.
+            Profiles are sets of properties and methods represented as JSON string.
+            Check the source code examples installed with the SDK.
+            </summary>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.LoadProfiles(System.String)">
+            <summary>
+            Loads profiles from file.
+            </summary>
+            <param name="fileName">JSON file containing profiles.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.LoadProfilesFromString(System.String)">
+            <summary>
+            Loads profiles from JSON string.
+            </summary>
+            <param name="jsonString">JSON string containing profiles.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.LoadAndApplyProfiles(System.String)">
+            <summary>
+            Loads profiles from JSON string and automatically applies them. Note that profiles containing
+            detection keywords will be deferred until the extraction.
+            </summary>
+            <remarks>Note, all existing profiles are discarded before loading profiles from the provided string.</remarks>
+            <param name="jsonString">JSON string containing profiles.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.CreateProfile(System.String,System.String)">
+            <summary>
+            Creates JSON profile will all Barcode properties with current values.
+            </summary>
+            <param name="profileName">Name of profile (without spaces).</param>
+            <param name="outputFileName">Output file name.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.CreateProfile(System.String)">
+            <summary>
+            Creates JSON profile will all Barcode properties with current values.
+            </summary>
+            <param name="profileName">Name of profile (without spaces).</param>
+            <returns>JSON string.</returns>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.ValueIsValid(System.String)">
+            <summary>
+            Validates the value using current symbology rules.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>
+                <c>true</c> if value is valid (can be encoded); otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.ValueIsValid(System.String,System.Boolean)">
+            <summary>
+            Validates the value using current symbology rules.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="checksumIsMandatory">Expect the checksum if it's applicable for selected symbology.</param>
+            <returns>
+                <c>true</c> if value is valid (can be encoded); otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.ValueIsValidGS1(System.String)">
+            <summary>
+            Validates the GS1 value using GS1 rules.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>
+                <c>True</c> if value is valid (can be encoded); otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.GetValueRestrictions(Bytescout.BarCode.SymbologyType)">
+            <summary>
+            Gets the value restrictions for the specified symbology.
+            </summary>
+            <param name="symbology">The symbology to get value restrictions for.</param>
+            <returns>The value restrictions for the specified symbology.</returns>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.GetSupplementaryValueRestrictions">
+            <summary>
+            Gets the supplementary value restrictions.
+            </summary>
+            <returns>The supplementary value restrictions.</returns>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.SetMargins(System.Single,System.Single,System.Single,System.Single,Bytescout.BarCode.UnitOfMeasure)">
+            <summary>
+            Sets the barcode margins in specified units.
+            </summary>
+            <param name="left">The left margin value in specified units.</param>
+            <param name="top">The top margin value in specified units.</param>
+            <param name="right">The right margin value in specified units.</param>
+            <param name="bottom">The bottom margin value in specified units.</param>
+            <param name="unit">The unit of measure for margin values.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.GetMargins(System.Single@,System.Single@,System.Single@,System.Single@,Bytescout.BarCode.UnitOfMeasure)">
+            <summary>
+            Returns the barcode margins in specified units.
+            </summary>
+            <param name="left">Receives the left margin value in specified units.</param>
+            <param name="top">Receives the top margin value in specified units.</param>
+            <param name="right">Receives the right margin value in specified units.</param>
+            <param name="bottom">Receives the bottom margin value in specified units.</param>
+            <param name="unit">The unit of measure for retrieved margin values.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.GetMarginLeft(Bytescout.BarCode.UnitOfMeasure)">
+            <summary>
+            Returns the left barcode margin value in specified units.
+            </summary>
+            <param name="unit">The unit of measure for retrieved margin value.</param>
+            <returns>
+            The left barcode margin value in specified units.
+            </returns>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.GetMarginTop(Bytescout.BarCode.UnitOfMeasure)">
+            <summary>
+            Returns the top barcode margin value in specified units.
+            </summary>
+            <param name="unit">The unit of measure for retrieved margin value.</param>
+            <returns>
+            The top barcode margin value in specified units.
+            </returns>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.GetMarginRight(Bytescout.BarCode.UnitOfMeasure)">
+            <summary>
+            Returns the right barcode margin value in specified units.
+            </summary>
+            <param name="unit">The unit of measure for retrieved margin value.</param>
+            <returns>
+            The right barcode margin value in specified units.
+            </returns>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.GetMarginBottom(Bytescout.BarCode.UnitOfMeasure)">
+            <summary>
+            Retrieves the bottom barcode margin value in specified units.
+            </summary>
+            <param name="unit">The unit of measure for retrieved margin value.</param>
+            <returns>
+            The bottom barcode margin value in specified units.
+            </returns>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.SetBarHeight(System.Single,Bytescout.BarCode.UnitOfMeasure)">
+            <summary>
+            Sets the height of the barcode bars in specified units.
+            </summary>
+            <param name="height">The height of the barcode bars in specified units.</param>
+            <param name="unit">The unit of measure for bar height value.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.GetBarHeight(Bytescout.BarCode.UnitOfMeasure)">
+            <summary>
+            Returns the height of the barcode bars in specified units.
+            </summary>
+            <param name="unit">The unit of measure for retrieved bar height value.</param>
+            <returns>The height of the barcode bars in specified units.</returns>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.SetNarrowBarWidth(System.Single,Bytescout.BarCode.UnitOfMeasure)">
+            <summary>
+            Sets the width of the narrow bars in specified units.
+            </summary>
+            <param name="width">The width of the narrow bars in specified units.</param>
+            <param name="unit">The unit of measure for narrow bar width value.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.GetNarrowBarWidth(Bytescout.BarCode.UnitOfMeasure)">
+            <summary>
+            Retrieves the width of the narrow bar in specified units.
+            </summary>
+            <param name="unit">The unit of measure for retrieved narrow bar width.</param>
+            <returns>The width of the narrow bar in specified units.</returns>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.GetMinimalSize(Bytescout.BarCode.UnitOfMeasure)">
+            <summary>
+            Returns the size in specified units of the smallest rectangle that
+            can accommodate the barcode.
+            </summary>
+            <param name="unit">The unit of measure for retrieved size.</param>
+            <returns>The size in specified units of the smallest rectangle that
+            can accommodate the barcode.</returns>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.GetMinimalWidth(Bytescout.BarCode.UnitOfMeasure)">
+            <summary>
+            Returns the width in specified units of the smallest rectangle that
+            can accommodate the barcode.
+            </summary>
+            <param name="unit">The unit of measure for retrieved width.</param>
+            <returns>
+            The width in specified units of the smallest rectangle that
+            can accommodate the barcode.
+            </returns>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.GetMinimalHeight(Bytescout.BarCode.UnitOfMeasure)">
+            <summary>
+            Returns the height in specified units of the smallest rectangle that
+            can accommodate the barcode.
+            </summary>
+            <param name="unit">The unit of measure for retrieved height.</param>
+            <returns>
+            The height in specified units of the smallest rectangle that
+            can accommodate the barcode.
+            </returns>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.FitInto(System.Drawing.Size)">
+            <summary>
+            IMPORTANT: Call this method AFTER setting the barcode value.
+            Fits the barcode into the area of size specified in pixels.
+            Calling this method will change output size of the barcode.
+            Barcode size will be increased in order to occupy all
+            of the area.
+            </summary>
+            <param name="size">The size of the area to fit the barcode into.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.FitInto(System.Int32,System.Int32)">
+            <summary>
+            IMPORTANT: Call this method AFTER setting the barcode value.
+            Fits the barcode into the area of size specified in pixels.
+            Calling this method will change output size of the barcode.
+            Barcode size will be increased in order to occupy all
+            of the area.
+            </summary>
+            <param name="width">The width of the area.</param>
+            <param name="height">The height of the area.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.FitInto(System.Drawing.SizeF,Bytescout.BarCode.UnitOfMeasure)">
+            <summary>
+            IMPORTANT: Call this method AFTER setting the barcode value.
+            Fits the barcode into the area of size specified in units.
+            Calling this method will change output size of the barcode.
+            Barcode size will be increased in order to occupy all
+            of the area.
+            </summary>
+            <param name="size">The size of the area to fit the barcode into.</param>
+            <param name="unit">The unit of the size.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.FitInto(System.Single,System.Single,Bytescout.BarCode.UnitOfMeasure)">
+            <summary>
+            IMPORTANT: Call this method AFTER setting the barcode value.
+            Fits the barcode into the area of size specified in units.
+            Calling this method will change output size of the barcode.
+            Barcode size will be increased in order to occupy all
+            of the area.
+            </summary>
+            <param name="width">The width of the area in specified units.</param>
+            <param name="height">The height of the area in specified units.</param>
+            <param name="unit">The unit of measure for area size.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.RevertToNormalSize">
+            <summary>
+            Reverts any changes to barcode size caused by a call to any of FitInto methods.
+            </summary>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.GetMinimalSize">
+            <summary>
+            Gets or sets the size of the smallest rectangle in pixels that
+            can accommodate the barcode.
+            </summary>
+            <returns>The size of the smallest rectangle in pixels that can accommodate the barcode.</returns>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.Draw(System.Drawing.Graphics,System.Drawing.Point)">
+            <summary>
+            Draws the barcode on <see cref="T:System.Drawing.Graphics" /> canvas object.
+            </summary>
+            <param name="graphics">The <see cref="T:System.Drawing.Graphics" /> object to draw the barcode on.</param>
+            <param name="position">The position in pixels of the top left point of the barcode.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.DrawHDC(System.IntPtr,System.Int32,System.Int32)">
+            <summary>
+            Draws the barcode on HDC canvas object.
+            </summary>
+            <param name="hdc">The HDC to draw a barcode on.</param>
+            <param name="left">The leftmost point of barcode.</param>
+            <param name="top">The topmost point of barcode.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.Draw(System.Drawing.Graphics,System.Single,System.Single,Bytescout.BarCode.UnitOfMeasure)">
+            <summary>
+            Draws the barcode.
+            </summary>
+            <param name="graphics">The Graphics object to draw the barcode on.</param>
+            <param name="left">The coordinate of leftmost barcode point in specified units.</param>
+            <param name="top">The coordinate of topmost barcode point in specified units.</param>
+            <param name="unit">The unit of measure for coordinates.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.DrawHDC(System.IntPtr,System.Single,System.Single,Bytescout.BarCode.UnitOfMeasure)">
+            <summary> Draws the barcode on HDC graphics context. </summary>
+            <param name="hdc">The device context to draw the barcode on.</param>
+            <param name="left">The coordinate of leftmost barcode point in specified units.</param>
+            <param name="top">The coordinate of topmost barcode point in specified units.</param>
+            <param name="unit">The unit of measure for coordinates.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.GetImage">
+            <summary>
+            Gets the <see cref="T:System.Drawing.Image" /> object with the barcode.
+            </summary>
+            <returns>The <see cref="T:System.Drawing.Image" /> object with the barcode.</returns>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.SaveImage(System.String)">
+            <summary>
+            Saves the barcode image to file.
+            </summary>
+            <param name="fileName">Name of the file to save barcode to.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.SaveImage(System.String,System.Drawing.Imaging.ImageFormat)">
+            <summary>
+            Saves the barcode image to file.
+            </summary>
+            <param name="fileName">Name of the file to save barcode to.</param>
+            <param name="imageFormat">Format of the barcode image.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.SaveImage(System.String,System.Drawing.Imaging.ImageFormat,System.Drawing.Size,System.Int32,System.Int32)">
+            <summary>
+            Saves the barcode image to file.
+            </summary>
+            <param name="fileName">Name of the file to save barcode to.</param>
+            <param name="format">The format of the image (may be different then implied by the file name extension).</param>
+            <param name="areaSize">Size of the area containing image.</param>
+            <param name="imageLeft">The image leftmost position within area.</param>
+            <param name="imageTop">The image topmost position within area.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.SaveImage(System.IO.Stream)">
+            <summary>
+            Saves the barcode image to specified stream.
+            </summary>
+            <param name="stream">The stream to save barcode to.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.SaveImage(System.IO.Stream,System.Drawing.Imaging.ImageFormat)">
+            <summary>
+            Saves the barcode image to specified stream.
+            </summary>
+            <param name="stream">The stream to save barcode to.</param>
+            <param name="imageFormat">Format of the barcode image.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.SaveImage(System.IO.Stream,System.Drawing.Imaging.ImageFormat,System.Drawing.Size,System.Int32,System.Int32)">
+            <summary>
+            Saves the image with barcode into given stream.
+            </summary>
+            <param name="stream">The stream to save barcode to.</param>
+            <param name="format">The image format of the barcode.</param>
+            <param name="areaSize">Size of the area containing image.</param>
+            <param name="imageLeft">The image leftmost position within area.</param>
+            <param name="imageTop">The image topmost position within area.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.GetImageBytes">
+            <summary>
+            Returns the barcode image as byte array.
+            </summary>
+            <returns>The byte array containing barcode image.</returns>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.GetImageBytesEMF">
+            <summary>
+            Returns the barcode image in EMF format as byte array.
+            </summary>
+            <returns>The byte array containing barcode image.</returns>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.GetImageBytesWMF">
+            <summary>
+            Returns the barcode image in WMF format as byte array.
+            </summary>
+            <returns>The byte array containing barcode image.</returns>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.GetImageBytesTIFF">
+            <summary>
+            Returns the barcode image in TIFF format as byte array.
+            </summary>
+            <returns>The byte array containing barcode image.</returns>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.GetImageBytesPNG">
+            <summary>
+            Returns the barcode image in PNG format as byte array.
+            </summary>
+            <returns>The byte array containing barcode image.</returns>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.GetImageBytesGIF">
+            <summary>
+            Returns the barcode image in GIF format as byte array.
+            </summary>
+            <returns>The byte array containing barcode image.</returns>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.GetImageBytesJPG">
+            <summary>
+            Returns the barcode image in JPEG format as byte array.
+            </summary>
+            <returns>The byte array containing barcode image.</returns>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.SetCaptionFont(System.String,System.Int32)">
+            <summary>
+            Sets the font of the barcode caption.
+            </summary>
+            <param name="familyName">The font family.</param>
+            <param name="size">The size of the font in pixels.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.SetCaptionFont(System.String,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Byte)">
+            <summary>
+            Sets the font of the barcode caption font.
+            </summary>
+            <param name="familyName">The font family.</param>
+            <param name="size">The size of the font in pixels.</param>
+            <param name="bold">If <c>true</c>, then the text drawn with the font will be bold.</param>
+            <param name="italic">If <c>true</c>, then the text drawn with the font will be italic.</param>
+            <param name="underline">If <c>true</c>, then the text drawn with the font will be underlined.</param>
+            <param name="strikeout">If <c>true</c>, then the text drawn with the font will be contain line through the middle.</param>
+            <param name="gdiCharSet">A GDI character set to use for this font.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.SetAdditionalCaptionFont(System.String,System.Int32)">
+            <summary>
+            Sets the font of the additional barcode caption.
+            </summary>
+            <param name="familyName">The font family.</param>
+            <param name="size">The size of the font in pixels.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.SetAdditionalCaptionFont(System.String,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Byte)">
+            <summary>
+            Sets the font of the barcode additional caption.
+            </summary>
+            <param name="familyName">The font family.</param>
+            <param name="size">The size of the font in pixels.</param>
+            <param name="bold">If <c>true</c>, then the text drawn with the font will be bold.</param>
+            <param name="italic">If <c>true</c>, then the text drawn with the font will be italic.</param>
+            <param name="underline">If <c>true</c>, then the text drawn with the font will be underlined.</param>
+            <param name="strikeout">If <c>true</c>, then the text drawn with the font will be contain line through the middle.</param>
+            <param name="gdiCharSet">A GDI character set to use for this font.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.GetPDFDimensions(System.String)">
+            <summary> Returns size of PDF document pages in document units. </summary>
+            <param name="inputFile">Input PDF file name.</param>
+            <returns>Document page size (in document units).</returns>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.GetPDFDimensions(System.IO.Stream)">
+            <summary> Returns size of PDF document pages in document units. </summary>
+            <param name="inputStream">Stream containing input PDF document.</param>
+            <returns>Document page size (in document units).</returns>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.DrawToPDF(System.String,System.Int32,System.Int32,System.Int32,System.String)">
+            <summary> 
+             Draws barcode on specified page of PDF document.
+            </summary>
+            <param name="inputFile">Input PDF file name.</param>
+            <param name="pageIndex">Zero-based page index. Use -1 to draw barcode on each document page.</param>
+            <param name="x">X coordinate (in document units).</param>
+            <param name="y">Y coordinate (in document units).</param>
+            <param name="outputFile">Output PDF file name.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.DrawToPDF(System.IO.Stream,System.Int32,System.Int32,System.Int32,System.IO.Stream)">
+            <summary> 
+             Draws barcode on specified page of PDF document.
+            </summary>
+            <param name="inputStream">Stream containing input PDF document.</param>
+            <param name="pageIndex">Zero-based page index. Use -1 to draw barcode on each document page.</param>
+            <param name="x">X coordinate (in document units).</param>
+            <param name="y">Y coordinate (in document units).</param>
+             ///<param name="outputStream">Output stream.</param></member>
+        <member name="M:Bytescout.BarCode.IBarcode.DrawToNewPDF(System.String,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary> 
+             Creates new PDF document and draws barcode on it.
+            </summary>
+            <param name="fileName">New PDF document file name.</param>
+            <param name="pageWidth">Page width (in document units).</param>
+            <param name="pageHeight">Page height (in document units).</param>
+            <param name="barcodeX">X coordinate of barcode (in document units).</param>
+            <param name="barcodeY">Y coordinate of barcode (in document units).</param>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.DrawToNewPDF(System.String)">
+            <summary> 
+             Creates new PDF document and draws barcode on it.
+            </summary>
+            <param name="fileName">New PDF document file name.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.DrawImagesToPDF(System.String,System.Int32,System.Drawing.Image[],System.Drawing.Point[],System.String)">
+            <summary> 
+             Utility method allowing to draw any image on specified page of PDF document.
+            </summary>
+            <param name="inputFile">Input PDF file name.</param>
+            <param name="pageIndex">Zero-based page index. Use -1 to draw barcode on each document page.</param>
+            <param name="images">Array of Image objects to draw on PDF page.</param>
+            <param name="points">Array of upper-left points of images (in document units).</param>
+            <param name="outputFile">Output PDF file name.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.DrawImagesToPDF(System.String,System.Int32,System.Drawing.Image[],System.Drawing.Point[],System.String,System.String)">
+            <summary> 
+             Utility method allowing to draw any image on specified page of PDF document.
+            </summary>
+            <param name="inputFile">Input PDF file name.</param>
+            <param name="pageIndex">Zero-based page index. Use -1 to draw barcode on each document page.</param>
+            <param name="images">Array of Image objects to draw on PDF page.</param>
+            <param name="points">Array of upper-left points of images (in document units).</param>
+            <param name="outputFile">Output PDF file name.</param>
+            <param name="documentLayerName">Name for new PDF layer to place images on. If null or empty, no new layer will be created.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.DrawImagesToPDF(System.IO.Stream,System.Int32,System.Drawing.Image[],System.Drawing.Point[],System.IO.Stream)">
+            <summary> 
+            Utility method allowing to draw any image on specified page of PDF document.
+            </summary>
+            <param name="inputStream">Stream containing input PDF document.</param>
+            <param name="pageIndex">Zero-based page index. Use -1 to draw barcode on each document page.</param>
+            <param name="images">Array of Image objects to draw on PDF page.</param>
+            <param name="points">Array of upper-left points of images (in document units).</param>
+            <param name="outputStream">Output stream.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.DrawImagesToPDF(System.IO.Stream,System.Int32,System.Drawing.Image[],System.Drawing.Point[],System.IO.Stream,System.String)">
+            <summary> 
+             Utility method allowing to draw any image on specified page of PDF document.
+            </summary>
+            <param name="inputStream">Stream containing input PDF document.</param>
+            <param name="pageIndex">Zero-based page index. Use -1 to draw barcode on each document page.</param>
+            <param name="images">Array of Image objects to draw on PDF page.</param>
+            <param name="points">Array of upper-left points of images (in document units).</param>
+            <param name="outputStream">Output stream.</param>
+            <param name="documentLayerName">Name for new PDF layer to place images on. If null or empty, no new layer will be created.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.DrawImagesToPDF(System.String,System.String,Bytescout.BarCode.DrawImagesToPDFCallback)">
+            <summary> 
+             Utility method allowing to draw any image on specified page of PDF document.
+            </summary>
+            <param name="inputFile">Input PDF file name.</param>
+            <param name="outputFile">Output PDF file name.</param>
+            <param name="pageCallback">Callback method called for every page of PDF document.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.DrawImagesToPDF(System.IO.Stream,System.IO.Stream,Bytescout.BarCode.DrawImagesToPDFCallback)">
+            <summary> 
+             Utility method allowing to draw any image on specified page of PDF document.
+            </summary>
+            <param name="inputStream">Stream containing input PDF document.</param>
+            <param name="outputStream">Output stream.</param>
+            <param name="pageCallback">Callback method called for every page of PDF document.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.DrawToImage(System.String,System.Int32,System.Int32,System.Int32,System.String)">
+            <summary>
+            Draws barcode to image at specified coordinates.
+            </summary>
+            <param name="inputFile">Input image file path.</param>
+            <param name="pageIndex">Index of the page for multi-page TIFF images. -1 means all pages.</param>
+            <param name="x">X coordinate.</param>
+            <param name="y">Y coordinate.</param>
+            <param name="outputFile">Output image file path.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.DrawToImage(System.IO.Stream,System.Int32,System.Int32,System.Int32,System.IO.Stream)">
+            <summary>
+            Draws barcode to image at specified coordinates.
+            </summary>
+            <param name="inputStream">Input stream containing the image to draw the barcode on.</param>
+            <param name="pageIndex">Index of the page for multi-page TIFF images. -1 means all pages.</param>
+            <param name="x">X coordinate.</param>
+            <param name="y">Y coordinate.</param>
+            <param name="outputStream">Output stream.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.GetPdfPageCount(System.String)">
+            <summary>
+            Returns count of pages in PDF document.
+            </summary>
+            <param name="fileName">PDF file path.</param>
+            <returns>Page count.</returns>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.GetPdfPageCount(System.IO.Stream)">
+            <summary>
+            Returns count of pages in PDF document.
+            </summary>
+            <param name="stream">Stream containing PDF document.</param>
+            <returns>Page count.</returns>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.SetForeColorRGB(System.Byte,System.Byte,System.Byte)">
+            <summary>
+            Sets the fore color in RGB format.
+            </summary>
+            <param name="r">Red color component.</param>
+            <param name="g">Green color component.</param>
+            <param name="b">Blue color component.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.SetBackColorRGB(System.Byte,System.Byte,System.Byte)">
+            <summary>
+            Sets the background color in RGB format.
+            </summary>
+            <param name="r">Red color component.</param>
+            <param name="g">Green color component.</param>
+            <param name="b">Blue color component.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.SetCustomCaptionGap(System.Single,Bytescout.BarCode.UnitOfMeasure)">
+            <summary>
+            Sets the gap size between the barcode and caption. To reset the gap to default (1/10 of caption font height) set <paramref name="gap" /> to float.NaN.
+            </summary>
+            <param name="gap">Gap size in specified units.</param>
+            <param name="unit">The unit of measure for margin values.</param>
+            <remarks>You should use this method after setting the ResolutionY property.</remarks>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.ProcessMacros(System.String)">
+            <summary>
+            Replaces macro codes with corresponding ASCII control characters.
+            </summary>
+            <remarks>
+            Use following macros to insert ASCII control characters: {NUL}, {SOH}, {STX}, {ETX}, {EOT}, {ENQ}, {ACK}, {BEL}, {BS}, {TAB}, {LF}, {VT}, {FF}, {CR}, 
+            {SO}, {SI}, {DLE}, {DC1}, {DC2}, {DC3}, {DC4}, {NAK}, {SYN}, {ETB}, {CAN}, {EM}, {SUB}, {ESC}, {FS}, {GS}, {RS}, {US}.
+            </remarks>
+            <param name="value">Input value.</param>
+            <returns>Value with processed macros.</returns>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.AddDecorationImage(System.String,System.Int32)">
+            <summary>
+            Add decorative image to draw in the center of the barcode. 
+            (!) Supported with QR Code only.
+            </summary>
+            <remarks>Note, the embedded image damages the barcode, but the QR Code's error correction algorithm makes it possible 
+            to decode the damaged barcode if the damage doesn't exceed 7-30% of barcode square (depending on the error correction level).
+            See <see cref="P:Bytescout.BarCode.IBarcode.Options" /> and <see cref="T:Bytescout.BarCode.QRErrorCorrectionLevel" />.
+            It's recommended to generate the QR Code with highest error correction level and check the barcode is still decodable after image applying. 
+            To read the barcode you can use ByteScout Barcode Reader SDK: https://bytescout.com/products/developer/barcodereadersdk/bytescoutbarcodereadersdk.html
+            </remarks>
+            <param name="imageFileName">Image to add to barcode.</param>
+            <param name="scale">Scale of the image square relatively to the barcode square, in percents. 
+            Recommended is 15 percents with the highest error correction level. Set -1 to disable the scaling.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.IBarcode.AddDecorationImage(System.Drawing.Image,System.Int32)">
+            <summary>
+            Add decorative image to draw in the center of the barcode. 
+            (!) Supported with QR Code only.
+            </summary>
+            <remarks>Note, the embedded image damages the barcode, but the QR Code's error correction algorithm makes it possible 
+            to decode the damaged barcode if the damage doesn't exceed 7-30% of barcode square (depending on the error correction level).
+            See <see cref="P:Bytescout.BarCode.IBarcode.Options" /> and <see cref="T:Bytescout.BarCode.QRErrorCorrectionLevel" />.
+            It's recommended to generate the QR Code with highest error correction level and check the barcode is still decodable after image applying. 
+            To read the barcode you can use ByteScout Barcode Reader SDK: https://bytescout.com/products/developer/barcodereadersdk/bytescoutbarcodereadersdk.html
+            </remarks>
+            <param name="image">Image to add to barcode.</param>
+            <param name="scale">Scale of the image square relatively to the barcode square, in percents. 
+            Recommended is 15 percents with the highest error correction level. Set -1 to disable the scaling.</param>
+        </member>
+        <member name="T:Bytescout.BarCode.ImageComposer">
+            <summary>
+            Represents class that creates a single composite image from several images by placing them
+            in a fixed position or arranging automatically.
+            </summary>
+        </member>
+        <member name="P:Bytescout.BarCode.ImageComposer.InnerGap">
+            <summary>
+            Gets or sets the gap between images for automatic composition mode.
+            </summary>
+        </member>
+        <member name="P:Bytescout.BarCode.ImageComposer.Margins">
+            <summary>
+            Gets or sets margins for the composite image.
+            </summary>
+        </member>
+        <member name="P:Bytescout.BarCode.ImageComposer.BackgroundColor">
+            <summary>
+            Gets or sets the background color of composite image.
+            </summary>
+        </member>
+        <member name="M:Bytescout.BarCode.ImageComposer.#ctor(System.Int32,System.Int32,Bytescout.BarCode.CompositionMode)">
+            <summary>
+            Constructs ImageComposer object.
+            </summary>
+            <param name="innerGap">Gap between images in automatic composition mode. Default is 0.</param>
+            <param name="margins">Margins for output image. Default is 0. </param>
+            <param name="compositionMode">Composition mode. Default is 'CompositionMode.ArrangeHorizontally'.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.ImageComposer.Dispose">
+            <summary>
+                <inheritdoc />
+            </summary>
+        </member>
+        <member name="M:Bytescout.BarCode.ImageComposer.AddImage(System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Adds an image to the composition.
+            </summary>
+            <param name="fileName">Image file path.</param>
+            <param name="positionX">Horizontal (left) position for fixed positioning mode (see <see cref="P:Bytescout.BarCode.ImageComposer.CompositionMode" />). Default is 0.</param>
+            <param name="positionY">Vertical (top) position for fixed positioning mode (see <see cref="P:Bytescout.BarCode.ImageComposer.CompositionMode" />). Default is 0.</param>
+            <param name="rotationAngle">Rotation angle in degrees. Default is 0.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.ImageComposer.AddImage(System.IO.Stream,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Adds an image to the composition.
+            </summary>
+            <param name="stream">Stream that contains an image file.</param>
+            <param name="positionX">Horizontal (left) position for fixed positioning mode (see <see cref="P:Bytescout.BarCode.ImageComposer.CompositionMode" />). Default is 0.</param>
+            <param name="positionY">Vertical (top) position for fixed positioning mode (see <see cref="P:Bytescout.BarCode.ImageComposer.CompositionMode" />). Default is 0.</param>
+            <param name="rotationAngle">Rotation angle in degrees. Default is 0.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.ImageComposer.AddImage(System.Drawing.Image,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Adds an image to the composition.
+            </summary>
+            <param name="image">
+                <see cref="T:System.Drawing.Image" /> object to add.</param>
+            <param name="positionX">Horizontal (left) position for fixed positioning mode (see <see cref="P:Bytescout.BarCode.ImageComposer.CompositionMode" />). Default is 0.</param>
+            <param name="positionY">Vertical (top) position for fixed positioning mode (see <see cref="P:Bytescout.BarCode.ImageComposer.CompositionMode" />). Default is 0.</param>
+            <param name="rotationAngle">Rotation angle in degrees. Default is 0.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.ImageComposer.SetBackgroundColor(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Sets the background color of composite image.
+            </summary>
+            <param name="red">Red component of the color. From 0 to 255.</param>
+            <param name="green">Green component of the color. From 0 to 255.</param>
+            <param name="blue">Blue component of the color. From 0 to 255.</param>
+            <param name="alpha">Alpha (transparency) component of the color. From 0 to 255.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.ImageComposer.GetComposedImage">
+            <summary>
+            Returns composed image.
+            </summary>
+            <returns>
+                <see cref="T:System.Drawing.Image" /> object.</returns>
+        </member>
+        <member name="M:Bytescout.BarCode.ImageComposer.SaveComposedImage(System.String)">
+            <summary>
+            Saves composed image to a file.
+            </summary>
+            <param name="fileName">Output image file path.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.ImageComposer.SaveComposedImage(System.IO.Stream)">
+            <summary>
+            Saves composed image to a file.
+            </summary>
+            <param name="outputStream">Output stream.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.ImageComposer.SaveComposedImage(System.String,System.Drawing.Imaging.ImageFormat)">
+            <summary>
+            Saves composed image to a file.
+            </summary>
+            <param name="fileName">Output image file path.</param>
+            <param name="imageFormat">
+                <see cref="T:System.Drawing.Imaging.ImageFormat" /> to save.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.ImageComposer.SaveComposedImage(System.IO.Stream,System.Drawing.Imaging.ImageFormat)">
+            <summary>
+            Saves composed image to a file.
+            </summary>
+            <param name="outputStream">Output stream.</param>
+            <param name="imageFormat">
+                <see cref="T:System.Drawing.Imaging.ImageFormat" /> to save.</param>
+        </member>
+        <member name="T:Bytescout.BarCode.CompositionMode">
+            <summary>
+            Image composition modes for <see cref="T:Bytescout.BarCode.ImageComposer" />.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.CompositionMode.ArrangeHorizontally">
+            <summary>
+            Automatically
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.CompositionMode.ArrangeVertically">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.CompositionMode.FixedPosition">
+            <summary></summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Bytescout.BarCode.Internal.GS1DataBarExpandedSymbology.IsDigit(System.String,System.Int32,System.Int32)" -->
+        <member name="T:Bytescout.BarCode.TelepenAlphabet">
+            <summary>
+            Describes alphabet options for Telepen symbology.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.TelepenAlphabet.ASCII">
+            <summary>
+            (0) The alphabet to use ASCII chars (encoded as string)
+            All characters are encoded as ASCII characters.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.TelepenAlphabet.Numeric">
+            <summary>
+            (1) The Numeric alphabet. Works when input value contains numbers only and makes smaller size barcodes by packing each number
+            Input string should contain numbers only.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.TelepenAlphabet.Auto">
+            <summary>
+            (2) Mixed alphabet. Automatically selects appropriate alphabet (ASCII or Numeric) for different parts of barcode.
+            WARNING: Not supported by some hardware barcode readers manufacturers 
+            </summary>
+        </member>
+        <member name="T:Bytescout.BarCode.PZNType">
+            <summary>
+            Specifies the type of PZN symbology.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PZNType.PZN7">
+            <summary>
+            The original PZN barcode with 6 significant digits. PZN7 is obsolete since 2013-01-01, but can be used up to 2020-01-01.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PZNType.PZN8">
+            <summary>
+            New PZN8 standard with 7 significant digits. Supercedes PZN7 since 2013-01-01. 
+            Default. 
+            </summary>
+        </member>
+        <member name="T:Bytescout.BarCode.MSIChecksumAlgorithm">
+            <summary>
+            Describes all supported MSI symbology checksum algorithms.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.MSIChecksumAlgorithm.NoCheckDigit">
+            <summary>
+            No check digit (least common)
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.MSIChecksumAlgorithm.Modulo10">
+            <summary>
+            The Modulo 10 check digit algorithm (most common) uses the Luhn algorithm.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.MSIChecksumAlgorithm.Modulo11">
+            <summary>
+            The Modulo 11 check digit algorithm.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.MSIChecksumAlgorithm.Modulo1010">
+            <summary>
+            The Modulo 1010 check digit algorithm.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.MSIChecksumAlgorithm.Modulo1110">
+            <summary>
+            The Modulo 1110 check digit algorithm.
+            </summary>
+        </member>
+        <member name="T:Bytescout.BarCode.PageSize">
+            <summary>
+            Describes standart page sizes.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.LETTER">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.NOTE">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.LEGAL">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.TABLOID">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.EXECUTIVE">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.POSTCARD">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.A0">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.A1">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.A2">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.A3">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.A4">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.A5">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.A6">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.A7">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.A8">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.A9">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.A10">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.B0">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.B1">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.B2">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.B3">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.B4">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.B5">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.B6">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.B7">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.B8">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.B9">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.B10">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.ARCH_E">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.ARCH_D">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.ARCH_C">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.ARCH_B">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.ARCH_A">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.FLSA">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.FLSE">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.HALFLETTER">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize._11X17">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.ID_1">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.ID_2">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.ID_3">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.LEDGER">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.CROWN_QUARTO">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.LARGE_CROWN_QUARTO">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.DEMY_QUARTO">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.ROYAL_QUARTO">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.CROWN_OCTAVO">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.LARGE_CROWN_OCTAVO">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.DEMY_OCTAVO">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.ROYAL_OCTAVO">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.SMALL_PAPERBACK">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.PENGUIN_SMALL_PAPERBACK">
+            <summary></summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PageSize.PENGUIN_LARGE_PAPERBACK">
+            <summary></summary>
+        </member>
+        <member name="T:Bytescout.BarCode.PDF417CompactionMode">
+            <summary>
+            Describes all possible compaction (encoding) modes for PDF417 symbology.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PDF417CompactionMode.Auto">
+            <summary>
+            (-1) Library will choose best compaction mode (aim is to produce shortest encoded byte string).
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PDF417CompactionMode.Binary">
+            <summary>
+            (0) Binary compaction mode. Can encode any ASCII symbol.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PDF417CompactionMode.Text">
+            <summary>
+            (1) Text compaction mode (allows optimized text encoding)
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PDF417CompactionMode.Numeric">
+            <summary>
+            (2) Numeric compaction mode (allows optimized encoding of numbers)
+            </summary>
+        </member>
+        <member name="T:Bytescout.BarCode.PDF417ErrorCorrectionLevel">
+            <summary>
+            Describes all possible error correction levels for PDF417 symbology.
+            </summary>
+            <remarks>
+            When error correction level set to Auto, library will try to 
+            use best possible error correction level. Error correction is done
+            by adding extra symbols to barcode. Higher error correction level
+            adds more extra symbols and thus shortens possible length of string 
+            to encode.
+            </remarks>
+        </member>
+        <member name="F:Bytescout.BarCode.PDF417ErrorCorrectionLevel.Auto">
+            <summary>
+            (-1) Library will choose best possible error correction level.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PDF417ErrorCorrectionLevel.Level0">
+            <summary>
+            (0) Level 0 error correction. 2 extra symbols will be added to
+            encoded data.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PDF417ErrorCorrectionLevel.Level1">
+            <summary>
+            (1) Level 1 error correction. 4 extra symbols will be added to 
+            encoded data.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PDF417ErrorCorrectionLevel.Level2">
+            <summary>
+            (2) Level 2 error correction. 8 extra symbols will be added to 
+            encoded data.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PDF417ErrorCorrectionLevel.Level3">
+            <summary>
+            (3) Level 3 error correction. 16 extra symbols will be added to 
+            encoded data.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PDF417ErrorCorrectionLevel.Level4">
+            <summary>
+            (4) Level 4 error correction. 32 extra symbols will be added to 
+            encoded data.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PDF417ErrorCorrectionLevel.Level5">
+            <summary>
+            (5) Level 5 error correction. 64 extra symbols will be added to 
+            encoded data.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PDF417ErrorCorrectionLevel.Level6">
+            <summary>
+            (6) Level 6 error correction. 128 extra symbols will be added to 
+            encoded data.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PDF417ErrorCorrectionLevel.Level7">
+            <summary>
+            (7) Level 7 error correction. 256 extra symbols will be added to 
+            encoded data.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.PDF417ErrorCorrectionLevel.Level8">
+            <summary>
+            (8) Level 8 error correction. 512 extra symbols will be added to 
+            encoded data.
+            </summary>
+        </member>
+        <member name="T:Bytescout.BarCode.QREncodeHint">
+            <summary>
+            Describes the library how non-alphanumerical characters should be encoded.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.QREncodeHint.Mode8">
+            <summary>
+            (0) All of non-alphanumerical characters will be encoded as is. This is default mode.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.QREncodeHint.Kanji">
+            <summary>
+            (1) Kanji/Kana characters will be encoded as Shif-JIS characters.
+            </summary>
+        </member>
+        <member name="T:Bytescout.BarCode.QRErrorCorrectionLevel">
+            <summary>
+            Level of error correction in QR Code symbols
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.QRErrorCorrectionLevel.Low">
+            <summary>
+            (0) Lowest error correction level (Approx. 7% of codewords can be restored).
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.QRErrorCorrectionLevel.Medium">
+            <summary>
+            (1) Medium error correction level (Approx. 15% of codewords can be restored).
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.QRErrorCorrectionLevel.Quarter">
+            <summary>
+            (2) Quarter error correction level (Approx. 25% of codewords can be restored).
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.QRErrorCorrectionLevel.High">
+            <summary>
+            (3) Highest error correction level (Approx. 30% of codewords can be restored).
+            </summary>
+        </member>
+        <member name="T:Bytescout.BarCode.UnitOfMeasure">
+            <summary>
+            Specifies the unit of measure for the given data.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.UnitOfMeasure.Pixel">
+            <summary>
+            (0) Specifies a device pixel as the unit of measure.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.UnitOfMeasure.Point">
+            <summary>
+            (1) Specifies a printer's point (1/72 inch) as the unit of measure. It is also used in PDF documents.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.UnitOfMeasure.Inch">
+            <summary>
+            (2) Specifies the inch as the unit of measure.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.UnitOfMeasure.Document">
+            <summary>
+            (3) Specifies the document unit (1/300 inch) as the unit of measure.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.UnitOfMeasure.Millimeter">
+            <summary>
+            (4) Specifies the millimeter as the unit of measure.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.UnitOfMeasure.Centimeter">
+            <summary>
+            (5) Specifies the centimeter as the unit of measure.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.UnitOfMeasure.Twip">
+            <summary>
+            (6) Specifies the twip unit (1/20 inch) as the unit of measure.
+            </summary>
+        </member>
+        <member name="T:Bytescout.BarCode.LicenseInfo">
+            <summary>
+            License information.
+            </summary>
+        </member>
+        <member name="P:Bytescout.BarCode.LicenseInfo.LicenseType">
+            <summary>
+            License type.
+            </summary>
+        </member>
+        <member name="P:Bytescout.BarCode.LicenseInfo.UpdatesExpireOn">
+            <summary>
+            Support and updates expiration date.
+            </summary>
+        </member>
+        <member name="P:Bytescout.BarCode.LicenseInfo.LimitType">
+            <summary>
+            License limit type.
+            </summary>
+        </member>
+        <member name="P:Bytescout.BarCode.LicenseInfo.LimitTerm">
+            <summary>
+            License limit term.
+            </summary>
+        </member>
+        <member name="P:Bytescout.BarCode.LicenseInfo.Limit">
+            <summary>
+            Limit of license units.
+            </summary>
+        </member>
+        <member name="P:Bytescout.BarCode.LicenseInfo.Remainder">
+            <summary>
+            Number of remaining license units.
+            </summary>
+        </member>
+        <member name="P:Bytescout.BarCode.LicenseInfo.LicenseKey">
+            <summary>
+            Masked license key (RegistrationKey).
+            </summary>
+        </member>
+        <member name="P:Bytescout.BarCode.LicenseInfo.DLLVersion">
+            <summary>
+            DLL version.
+            </summary>
+        </member>
+        <member name="P:Bytescout.BarCode.LicenseInfo.HardwareID">
+            <summary>
+            Device Hardware ID.
+            </summary>
+        </member>
+        <member name="M:Bytescout.BarCode.LicenseInfo.ToString">
+            <inheritdoc />
+        </member>
+        <member name="T:Bytescout.BarCode.Margins">
+            <summary>
+            Class that describes barcode margins.
+            </summary>
+        </member>
+        <member name="E:Bytescout.BarCode.Margins.Changed">
+            <summary>
+            Occurs when margins get changed.
+            </summary>
+        </member>
+        <member name="M:Bytescout.BarCode.Margins.FireChanged(System.Object)">
+            <summary>
+            Raises the <see cref="E:Changed" /> event.
+            </summary>
+            <param name="sender">The sender.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.Margins.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Bytescout.BarCode.Margins" /> class.
+            </summary>
+        </member>
+        <member name="M:Bytescout.BarCode.Margins.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Bytescout.BarCode.Margins" /> struct.
+            </summary>
+            <param name="left">The left margin.</param>
+            <param name="top">The top margin.</param>
+            <param name="right">The right margin.</param>
+            <param name="bottom">The bottom margin.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.Margins.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Bytescout.BarCode.Margins" /> class.
+            </summary>
+            <param name="value">The string representing margins in the form "[0;0;0;0]".</param>
+        </member>
+        <member name="M:Bytescout.BarCode.Margins.GetHashCode">
+            <summary>
+            Serves as a hash function for a particular type.
+            </summary>
+            <returns>
+            A hash code for the current <see cref="T:System.Object" />.
+            </returns>
+        </member>
+        <member name="M:Bytescout.BarCode.Margins.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Object" /> is equal to the current <see cref="T:Bytescout.BarCode.Margins" />.
+            </summary>
+            <param name="obj">The <see cref="T:System.Object" /> to compare with the current <see cref="T:Bytescout.BarCode.Margins" />.</param>
+            <returns>
+            true if the specified <see cref="T:System.Object" /> is equal to the current <see cref="T:Bytescout.BarCode.Margins" />; otherwise, false.
+            </returns>
+            <exception cref="T:System.NullReferenceException">The <paramref name="obj" /> parameter is null.</exception>
+        </member>
+        <member name="M:Bytescout.BarCode.Margins.ToString">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents the current <see cref="T:Bytescout.BarCode.Margins" />.
+            </summary>
+            <returns>
+            A <see cref="T:System.String" /> that represents the current <see cref="T:Bytescout.BarCode.Margins" />.
+            </returns>
+        </member>
+        <member name="M:Bytescout.BarCode.Margins.Clone">
+            <summary>
+            Creates a new object that is a copy of the current instance.
+            </summary>
+            <returns>
+            A new object that is a copy of this instance.
+            </returns>
+        </member>
+        <member name="P:Bytescout.BarCode.Margins.Left">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.Margins.Top">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.Margins.Right">
+            <inheritdoc />
+        </member>
+        <member name="P:Bytescout.BarCode.Margins.Bottom">
+            <inheritdoc />
+        </member>
+        <member name="T:Bytescout.BarCode.RotationAngle">
+            <summary>
+            Describes all supported barcode output rotation angles.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.RotationAngle.Degrees0">
+            <summary>
+            (0) 0 degrees clockwise
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.RotationAngle.Degrees90">
+            <summary>
+            (1) 90 degrees clockwise
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.RotationAngle.Degrees180">
+            <summary>
+            (2) 180 degrees clockwise
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.RotationAngle.Degrees270">
+            <summary>
+            (3) 270 degrees clockwise
+            </summary>
+        </member>
+        <member name="T:Bytescout.BarCode.SymbologyOptions">
+            <summary>
+            Describes symbology specific options.
+            </summary>
+        </member>
+        <member name="E:Bytescout.BarCode.SymbologyOptions.Changed">
+            <summary>
+            Occurs when options get changed.
+            </summary>
+        </member>
+        <member name="M:Bytescout.BarCode.SymbologyOptions.FireChanged(System.Object)">
+            <summary>
+            Raises the <see cref="E:Changed" /> event.
+            </summary>
+            <param name="sender">The sender.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.SymbologyOptions.Clone">
+            <summary>
+            Creates a new object that is a copy of the current instance.
+            </summary>
+            <returns>
+            A new object that is a copy of this instance.
+            </returns>
+        </member>
+        <member name="P:Bytescout.BarCode.SymbologyOptions.ShowStartStop">
+            <summary>
+            Gets or sets a value indicating whether to show start and stop symbology symbols in caption text.
+            </summary>
+            <value>
+                <c>true</c> if to show start and stop symbology symbols in caption text; otherwise, <c>false</c>.
+            </value>
+            <remarks>
+            Note that not all symbologies support this option. Some of the symbologies simply do not
+            have printable start or stop symbol.
+            </remarks>
+        </member>
+        <member name="P:Bytescout.BarCode.SymbologyOptions.DrawIntercharacterGap">
+            <summary>
+            Gets or sets a value indicating whether to draw intercharacter gaps.
+            </summary>
+            <value>
+                <c>true</c> if to draw intercharacter gaps; otherwise, <c>false</c>.
+            </value>
+            <remarks>
+            Note that not all symbologies support this option.
+            </remarks>
+        </member>
+        <member name="P:Bytescout.BarCode.SymbologyOptions.SupplementSpace">
+            <summary>
+            Gets or sets the space (in pixels) between main and supplemental barcode.
+            </summary>
+            <value>The space (in pixels) between main and supplemental barcode.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.SymbologyOptions.Encoding">
+            <summary>
+            Gets or sets the character encoding of barcode value for 2D barcode types (QR Code, PDF417, DataMatrix, Aztec, MaxiCode).
+            Default is <see cref="P:System.Text.Encoding.Default" /> (ANSI).
+            </summary>
+            <value>The character encoding.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.SymbologyOptions.TextEncodingCodePage">
+            <summary>
+            Gets or sets the character encoding of barcode value.
+            Default is <see cref="P:System.Text.Encoding.Default" /> - the default encoding on your computer.
+            You may override this value like:
+            <code>
+            barcode.Options.TextEncodingCodePage = 1250; // to use German locale to decode text
+            </code>
+            .NET interface: please use <see cref="P:Bytescout.BarCode.SymbologyOptions.Encoding" /> property instead
+            Some of available code pages are listed below for your reference:
+            <code>
+            Name               CodePage  EncodingName
+            shift_jis          932       Japanese (Shift-JIS)
+            windows-1250       1250      Central European (Windows)
+            windows-1251       1251      Cyrillic (Windows)
+            Windows-1252       1252      Western European (Windows)
+            windows-1253       1253      Greek (Windows)
+            windows-1254       1254      Turkish (Windows)
+            csISO2022JP        50221     Japanese (JIS-Allow 1 byte Kana)
+            iso-2022-kr        50225     Korean (ISO)
+            </code></summary>
+        </member>
+        <member name="P:Bytescout.BarCode.SymbologyOptions.TextEncodingUseUTF8">
+            <summary>
+            ActiveX interface: Enables UTF8 text encoding for use for barcode value decoding 
+            .NET interface: Use .TextEncoding property and set it to System.Text.Encoding.UTF8 if you need to
+            </summary>
+        </member>
+        <member name="P:Bytescout.BarCode.SymbologyOptions.QREncodeHint">
+            <summary>
+            Gets or sets the hint to use when encoding non-alphanumeric data while 
+            creating QR Code barcodes.
+            </summary>
+            <value>The hint to use when encoding non-alphanumeric data while 
+            creating QR Code barcodes.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.SymbologyOptions.QRErrorCorrectionLevel">
+            <summary>
+            Gets or sets the error correction level for QR Code barcodes.
+            </summary>
+            <value>The error correction level for QR Code barcodes.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.SymbologyOptions.QRVersion">
+            <summary>
+            Gets or sets the minimum version (size) for QR Code barcodes.
+            </summary>
+            <value>The minimum version (size) for QR Code barcodes. Should be in [0..40] range.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.SymbologyOptions.CodabarChecksumAlgorithm">
+            <summary>
+            Gets or sets the algorithm to use for Codabar symbology checksum calculation.
+            </summary>
+            <value>The algorithm to use for Codabar symbology checksum calculation.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.SymbologyOptions.CodabarStopSymbol">
+            <summary>
+            Gets or sets the symbol to use as stop symbol in Codabar symbology.
+            </summary>
+            <value>The symbol to use as stop symbol in Codabar symbology.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.SymbologyOptions.CodabarStartSymbol">
+            <summary>
+            Gets or sets the symbol to use as start symbol in Codabar symbology.
+            </summary>
+            <value>The symbol to use as start symbol in Codabar symbology.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.SymbologyOptions.Code128Alphabet">
+            <summary>
+            Gets or sets the alphabet to use for Code 128 symbology.
+            </summary>
+            <value>The alphabet to use for Code 128 symbology.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.SymbologyOptions.TelepenAlphabet">
+            <summary>
+            Gets or sets the alphabet to use for Telepen symbology.
+            </summary>
+            <value>The alphabet to use for Telepen symbology.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.SymbologyOptions.PDF417MinimumColumnCount">
+            <summary>
+            Gets or sets the minimum data column count for PDF417 barcodes.
+            </summary>
+            <value>The minimum data column count for PDF417 barcodes.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.SymbologyOptions.PDF417ColumnCount">
+            <summary>
+            This property is used only when PDF417UseManualSize == true.
+            Gets or sets the exact data column count for PDF417 barcodes.
+            </summary>
+            <value>The exact data column count for PDF417 barcodes.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.SymbologyOptions.PDF417RowCount">
+            <summary>
+            This property is used only when PDF417UseManualSize == true.
+            Gets or sets the exact data row count for PDF417 barcodes.
+            Set this property to zero to automatically calculate it according to the given column count.
+            </summary>
+            <value>The exact data row count for PDF417 barcodes.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.SymbologyOptions.PDF417UseManualSize">
+            <summary>
+            Gets a value indicating whether PDF417 barcodes should use exact row and column
+            count (<see cref="P:Bytescout.BarCode.SymbologyOptions.PDF417ColumnCount" /> and <see cref="P:Bytescout.BarCode.SymbologyOptions.PDF417RowCount" />)
+            instead of minimal column count <see cref="P:Bytescout.BarCode.SymbologyOptions.PDF417MinimumColumnCount" />.
+            </summary>
+            <value>A value indicating whether PDF417 barcodes should use exact row and column
+            count instead of minimal column count.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.SymbologyOptions.PDF417CompactionMode">
+            <summary>
+            Gets or sets the compaction mode to use while creating barcodes of PDF417 family.
+            </summary>
+            <value>The compaction mode to use while creating barcodes of PDF417 family.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.SymbologyOptions.PDF417ErrorCorrectionLevel">
+            <summary>
+            Gets or sets the error correction level for PDF417 barcodes.
+            </summary>
+            <value>The error correction level for PDF417 barcodes.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.SymbologyOptions.PDF417CreateMacro">
+            <summary>
+            Gets or sets a value indicating whether to create PDF417 barcode as 
+            part of Macro PDF417 sequence.
+            </summary>
+            <value>
+                <c>true</c> if PDF417 barcode should be created as part of 
+            Macro PDF417 sequence; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.SymbologyOptions.PDF417FileID">
+            <summary>
+            Gets or sets File ID value for Macro PDF417 barcodes.
+            </summary>
+            <value>The File ID value for Macro PDF417 barcodes.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.SymbologyOptions.PDF417SegmentIndex">
+            <summary>
+            Gets or sets Segment Index value for current Macro PDF417 barcode.
+            </summary>
+            <value>The Segment Index value for current Macro PDF417 barcode.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.SymbologyOptions.PDF417LastSegment">
+            <summary>
+            Gets or sets a value indicating if current Macro PDF 417 barcode 
+            should be marked as last segment of sequence.
+            </summary>
+            <value>
+                <c>true</c> if current Macro PDF 417 barcode should be marked 
+            as last segment of sequence.; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.SymbologyOptions.DataMatrixSize">
+            <summary>
+            Gets or sets the symbol size for Data Matrix barcodes.
+            </summary>
+            <value>The symbol size for Data Matrix barcodes.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.SymbologyOptions.DataMatrixCompactionMode">
+            <summary>
+            Gets or sets the compaction mode to use while creating Data Matrix barcodes.
+            </summary>
+            <value>The compaction mode to use while creating Data Matrix barcodes.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.SymbologyOptions.DataMatrixAlternativeReedSolomonCorrectionFor144x144Size">
+            <summary>
+            Alternative Reed-Solomon error correction for DataMatrix barcodes of 144x144 size, might be required for compatibility with some hardware barcode scanners.
+            </summary>
+        </member>
+        <member name="P:Bytescout.BarCode.SymbologyOptions.AztecCompactionMode">
+            <summary>
+            Gets or sets the compaction mode to use while creating Aztec barcodes.
+            </summary>
+            <value>The compaction mode to use while creating Aztec barcodes.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.SymbologyOptions.ISBNAutoCaption">
+            <summary>
+            Gets or sets a value indicating whether to draw auto created additional caption when encoding barcodes using ISBN symbology..
+            </summary>
+            <value>
+                <c>true</c> if auto created additional caption for ISBN barcodes should be drawn; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.SymbologyOptions.ISBNCaptionTemplate">
+            <summary>
+            Gets or sets the ISBN caption template (e.g.  #-#######-#-#).
+            </summary>
+            <value>The ISBN caption template.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.SymbologyOptions.AztecErrorCorrectionLevel">
+            <summary>
+            Gets or sets the error correction level for Aztec Code barcodes.
+            </summary>
+            <value>The error correction level for Aztec Code barcodes.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.SymbologyOptions.AztecSymbolSize">
+            <summary>
+            Gets or sets the minimum size for Aztec Code barcodes.
+            </summary>
+            <value>The version minimum size for Aztec Code barcodes.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.SymbologyOptions.GS1ExpandedStackedSegmentsNumber">
+            <summary>
+            Gets or sets the number of segments in line for GS1 DataBar Expanded Stacked symbology.
+            </summary>
+            <value>The number of segments in line.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.SymbologyOptions.MaxiCodeMode">
+            <summary>
+            Gets or sets the MaxiCode mode.
+            </summary>
+            <value>The MaxiCode mode.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.SymbologyOptions.MaxiCodeEnableCustomWidth">
+            <summary>
+            Gets or sets a value indicating whether MaxiCode enables the use of a custom width.
+            By default value is true and MaxiCode symbology size is determined as 30*NarrowBarWidth.
+            Set value to false if you want to use standard MaxiCode symbology size (calculated
+            as approximately one inch (2.54 cm) for the current resolution)
+            </summary>
+            <value>
+                <c>true</c> if MaxiCode enable custom width; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Bytescout.BarCode.SymbologyOptions.MSIChecksumAlgorithm">
+            <summary>
+            Gets or sets the algorithm to use for MSI symbology checksum calculation.
+            </summary>
+            <value>The algorithm to use for MSI symbology checksum calculation.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.SymbologyOptions.OnlyHorizontalBearerBar">
+            <summary>
+            Gets or sets a value indicating whether ITF-14 symbology has only horizontal bearer bar or surrounding bars.
+            </summary>
+            <value>
+                <c>true</c> if only horizontal bearer bar; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Bytescout.BarCode.SymbologyOptions.PZNType">
+            <summary>
+            Gets or sets the type of PZN symbology.
+            </summary>
+            <value>The type of PZN symbology.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.SymbologyOptions.PharmaCodeTwoTrack">
+            <summary>
+            Two-track variant of PharmaCode
+            </summary>
+        </member>
+        <member name="P:Bytescout.BarCode.SymbologyOptions.PharmaCodeSupplementaryCode">
+            <summary>
+            Add colored Supplementary bar in PharmaCode
+            </summary>
+        </member>
+        <member name="P:Bytescout.BarCode.SymbologyOptions.PharmaCodeSupplementaryBarColor">
+            <summary>
+            Color of Supplementary bar in PharmaCode
+            </summary>
+        </member>
+        <member name="P:Bytescout.BarCode.SymbologyOptions.PharmaCodeMiniature">
+            <summary>
+            Miniature variant of PharmaCode
+            </summary>
+        </member>
+        <member name="P:Bytescout.BarCode.SymbologyOptions.EANDrawQuietZoneIndicator">
+            <summary>
+            Gets or sets whether to draw the quite zone indicator on EAN-2 and EAN-5 supplementary barcodes. Default is <c>false</c>. 
+            </summary>
+        </member>
+        <member name="T:Bytescout.BarCode.SymbologyType">
+            <summary>
+            Describes all supported barcode symbologies (types).
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.Code128">
+            <summary>
+            (0) Code 128 barcode (Also known as Code-128). It is a very effective, 
+            high-density symbology which permits the encoding of alphanumeric 
+            (subject to alphabet selection) data. Code 128 is a very dense 
+            code, used extensively worldwide.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.Code39">
+            <summary>
+            (1) Code 39 barcode (Also known as USD-3, Code 3 of 9, LOGMARS and 
+            in extended mode also know as Code39Extended, Code 39 Full ASCII mode). 
+            Code 39 symbology allows all ASCII symbols to be encoded in 
+            extended mode or symbols from this string 
+            "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ-. $/+%" in 
+            standard mode. This symbology used for example by U.S. Government 
+            and military, required for DoD applications.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.Postnet">
+            <summary>
+            (2) Postnet barcode. This symbology usually gets printed by U.S. Post 
+            Office on envelopes. Postnet symbology allows only numeric
+            values to be encoded. The bar code itself can encode either a 
+            standard 5-digit Zip Code, a Zip+4 code, or a full 11-point 
+            delivery point code.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.UPCA">
+            <summary>
+            (3) UPC-A barcode (Also known as UPCA). Used with consumer products 
+            in U.S. UPC-A symbology allows only numeric values to be encoded.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.EAN8">
+            <summary>
+            (4) EAN-8 barcode (GTIN-8). This symbology is a short version of EAN-13 that
+            is intended to be used on packaging which would be otherwise 
+            too small to use one of the other versions. Used with consumer 
+            products internationally. EAN-8 symbology allows only numeric 
+            values to be encoded.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.ISBN">
+            <summary>
+            (5) ISBN Number encoded as EAN-13 barcode. 
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.Codabar">
+            <summary>
+            (6) Codabar barcode (Also known as Ames Code, USD-4, NW-7, 
+            Code 2 of 7). Codabar symbology allows only symbols from this 
+            string '0123456789-$:/.+' to be encoded. This symbology used 
+            for example in libraries and blood banks.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.I2of5">
+            <summary>
+            (7) Interleaved 2 of 5 barcode (Also know as Code 2 of 5 Interleaved). 
+            Interleaved 2 of 5 symbology allows only numeric values to be 
+            encoded. This symbology is used primarily in the distribution 
+            and warehouse industry.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.Code93">
+            <summary>
+            (8) Code 93 barcode (Also known as USS-93, Code93 and in extended 
+            mode also known as Code93Extended, Code 93 Full ASCII mode). 
+            Code 93 symbology allows all ASCII symbols to be encoded in 
+            extended mode or symbols from this string 
+            "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ-. $/+%" in 
+            standard mode. This symbology was designed to 
+            complement and improve upon Code 39 symbology. Code 93
+            produces denser code than that of Code 39.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.EAN13">
+            <summary>
+            (9) EAN-13 barcode (GTIN-13). Used with consumer 
+            products internationally. EAN-13 symbology allows only numeric 
+            values to be encoded.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.JAN13">
+            <summary>
+            (10) JAN-13 barcode (Also known as JAN codes). This symbology is 
+            mostly the same as EAN-13 symbology, but used in Japan. JAN 
+            stands for Japanese Numbering Authority. First two digits of 
+            JAN-13 symbology are always "49".
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.Bookland">
+            <summary>
+            (11) Bookland barcode. This symbology is mostly the same 
+            as EAN-13 symbology, but used exclusively with books. First three 
+            digits of Bookland symbology are always "978" the rest of code
+            is a ISBN number without embedded hyphens and ISBN check digit.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.UPCE">
+            <summary>
+            (12) UPC-E barcode (Also known as UPCE). This symbology is 
+            zero-suppression version of UPC-A. It is intended to be used on 
+            packaging which would be otherwise too small to use one of the 
+            other versions. The code is smaller because it drops out zeros 
+            which would otherwise occur in a symbol. Used with consumer 
+            products in U.S. UPC-E symbology allows only numeric values 
+            to be encoded.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.PDF417">
+            <summary>
+            (13) PDF417 symbology. This symbology is heavily used in the parcel 
+            industry. The PDF417 symbology can encode a vast amount of data 
+            into a small space. This symbology allows a maximum data size of 
+            1850 text characters, or 2710 digits. 
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.PDF417Truncated">
+            <summary>
+            (14) PDF417 Truncated symbology. This symbology is a truncted (right 
+            column is missing) or compact version of PDF417 symbology. 
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.DataMatrix">
+            <summary>
+            (15) Data Matrix symbology. The most popular application for Data 
+            Matrix is marking small items. The Data Matrix can encode text
+            and raw data. Usual data size is from a few bytes up to 2 kilobytes.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.QRCode">
+            <summary>
+            (16) QR Code symbology. QR Code initially was used for tracking parts in vehicle 
+            manufacturing, but now QR Codes used in a much broader context, 
+            including both commercial tracking applications and convenience-oriented 
+            applications aimed at mobile phone users (known as mobile tagging).
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.Aztec">
+            <summary>
+            (17) Aztec Code symbology. An Aztec code barcode is used by Deutsche Bahn, 
+            Trenitalia and by Swiss Federal Railways for tickets sold online and 
+            printed out by customers. The Aztec Code has been selected by the airline 
+            industry (IATA's BCBP standard) for the electronic boarding passes.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.Planet">
+            <summary>
+            (18) PLANET (The Postal Alpha Numeric Encoding Technique) barcode is used by 
+            the United States Postal Service to identify and track pieces of 
+            mail during delivery - the Post Office's "CONFIRM" services.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.EAN128">
+            <summary>
+            (19) EAN128 symbology (Also known as EAN-128, EAN-14, Shipping 
+            Container Code, UCC-14, DUN-14 (Distribution Unit Number), 
+            SSC-14, GS1-128, UCC-128, UCC/EAN-128. This symbology was developed 
+            to provide a worldwide format and standard for exchanging common 
+            data between companies.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.GS1_128">
+            <summary>
+            (20) GS1-128 symbology (new name for EAN128 symbology)
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.USPSSackLabel">
+            <summary>
+            (21) USPS Sack Label symbology (Also known as USPS 25 Sack Label). This
+            is in fact Interleaved 2 of 5 symbology with exactly 8 digits 
+            encoded: 5-digit Zip Code (the sack destination) and a 3-digit 
+            content identifier number(CIN).
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.USPSTrayLabel">
+            <summary>
+            (22) USPS Tray Label symbology (Also known as USPS 25 Tray Label). This
+            is in fact Interleaved 2 of 5 symbology with exactly 10 digits 
+            encoded: 5-digit Zip Code (the tray destination) and a 3-digit 
+            content identifier number(CIN), and a 2-digit USPS processing code.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.DeutschePostIdentcode">
+            <summary>
+            (23) Deutsche Post Identcode (Also known as Deutsche Post AG IdentCode, 
+            German Postal 2 of 5 IdentCode, Deutsche Frachtpost IdentCode, 
+            IdentCode, Deutsche Post AG (DHL). This symbology is used by 
+            German Post (Deutsche Post AG) (Deutsche Frachtpost). The barcode
+            contains a tracking number providing an identification of the 
+            customer (sender) and the mail piece. The value to encode length 
+            is fixed to 11 digits. The value to encode must have the following 
+            structure: 2 digits for ID of primary distribution center, 3 digits 
+            for Customer ID, and 6 digits for Mailing number.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.DeutschePostLeitcode">
+            <summary>
+            (24) Deutsche Post Leitcode (Also known as German Postal 2 of 5 LeitCode, 
+            LeitCode, CodeLeitcode, Deutsche Post AG (DHL)). This symbology is used by 
+            German Post (Deutsche Post AG) (Deutsche Frachtpost). The barcode
+            gives an indication of the destination. The value to encode length 
+            is fixed to 13 digits. The value to encode must have the following 
+            structure: 5 digits for Postal Code (Postleitzahl, PLZ), 3 digits 
+            for Street ID/number, 3 digits for House number, and 2 digits for 
+            Product code.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.Numly">
+            <summary>
+            (25) Numly barcode (Also known as ESN, Electronic Serial Number). This
+            barcode is a unique identifier that allows an author or publisher to assign 
+            to content and track licensing of each id assignment. Numly Numbers 
+            are useful if you wish to identify each electronic distributed copy 
+            of any form of electronic media. Numly Numbers can also act a 
+            third-party content submission time stamps to aid in copyright 
+            proving instances and emails. The length of value to encode is 
+            fixed to 19 digits.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.PZN">
+            <summary>
+            (26) PZN barcode (Also known as Pharma-Zentral-Nummer, Pharmazentralnummer, 
+            Code PZN, CodePZN, Pharma Zentral Nummer). This symbology is 
+            used for distribution of pharmaceutical / health care products 
+            in Germany. The specification of this application is maintained 
+            at Informationsstelle für Arzneispezialitäten GmbH (IFA). The 
+            length of value to encode is 6 digits.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.OpticalProduct">
+            <summary>
+            (27) Optical Product Code (Also known as OPC, Vision Council of America 
+            OPC, VCA BarCode, VCA OPC) symbology. This symbology is used for 
+            marking retail optical products. The OPC is a 9-digit, numeric 
+            code that identifies the product and the manufacturer. The 
+            structure of the OPC code is the following: 5 digits for 
+            Manufacturer Identification Number assigned by the Optical 
+            Product Code Council, Inc., 4 digits for Item Identification Number 
+            assigned and controlled by the optical manufacturer.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.SwissPostParcel">
+            <summary>
+            (28) Swiss Post Parcel (Also known as SwissPost Parcel Barcode, 
+            Switzerland Post Parcel Barcode, Swiss PostParcel Barcode) symbology.
+            This symbology is used by Swiss Post. It identifies each parcel 
+            and serves as a means of verifying mailing and delivery and 
+            checking the service offering. All parcels must have a unique 
+            barcode. The barcode is the requirement for automated processing. 
+            The barcode serves as a means of identifying the item. The 
+            structure of the Swiss Post Parcel barcode is 18 numeric digits: 
+            2 digits for Swiss Post reference, 8 digits for Franking license 
+            number, and 8 digits for Item number.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.RoyalMail">
+            <summary>
+            (29) Royal Mail barcode (Also known as RMS4CC, RoyalMail4SCC, 
+            Royal Mail 4-State, British Royal Mail 4-State Customer Code,
+            4-State). This symbology was created for automated mail sorting.
+            It normally codes the postcode and the house or mailbox number 
+            in a machine readable format. The contents of the code may vary 
+            in different countries. This symbology encodes alpha-numeric 
+            characters (0-9, A-Z).
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.DutchKix">
+            <summary>
+            (30) Dutch KIX barcode (Also known as Royal TNT Post Kix, Dutch 
+            KIX 4-State Barcode, Kix Barcode, TPG KIX, Klantenindex Barcode,
+            TPGPOST KIX). This symbology is used by Royal Dutch TPG Post 
+            (Netherlands) for Postal code and automatic mail sorting. It 
+            provides information about the address of the receiver. This 
+            symbology encodes alpha-numeric characters (0-9, A-Z).
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.SingaporePostalCode">
+            <summary>
+            (31) Singapore 4-State Postal Code barcode (Also known as Singapore 
+            4-State Postal, SingPost 4-State, SingPost Barcode, Singapore 
+            4-State Code). This Symbology is used by Singapore Post 
+            (SingPost) for Postal code and automatic mail sorting. Such
+            barcode provides information about the address of the receiver.
+            This symbology encodes alpha-numeric characters (0-9, A-Z).
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.EAN2">
+            <summary>
+            (32) The EAN-2 (Also known as EAN/2 and EAN 2) is a supplement to 
+            the EAN-13 and UPC-A barcodes. It is often used on magazines 
+            and periodicals to indicate an issue number.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.EAN5">
+            <summary>
+            (33) The EAN-5 (Also known as EAN/5 and EAN 5) is a supplement to
+            EAN-13 and UPC-A barcodes. It is often used to give a 
+            suggestion for the price of the book.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.EAN14">
+            <summary>
+            (34) The EAN14 symbology is used for traded goods.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.MacroPDF417">
+            <summary>
+            (35) The Macro version of PDF417 Symbology.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.MicroPDF417">
+            <summary>
+            (36) The Micro version of PDF417 Symbology.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.GS1_DataMatrix">
+            <summary>
+            (37) GS1 DataMatrix is a 2D (two-dimensional) barcode that holds
+            large amounts of data in a relatively small space. These barcodes
+            are used primarily in aerospace, pharmaceuticals, medical device
+            manufacturing, and by the U.S. Department of Defense to add
+            visibility to the value chain. GS1 DataMatrix can be used for parts
+            that need to be tracked in the manufacturing process because the
+            barcode allows users to encode a variety of information related
+            to the product, such as date or lot number. They are not intended
+            to be used on items that pass through retail point-of-sale (POS).
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.Telepen">
+            <summary>
+            (38) The Telepen symbology. This symbology is used in many countries and
+            very widely in the UK. Most Universities and other academic libraries use
+            Telepen, as do many public libraries. Other users include the motor
+            industry, Ministry of Defence and innumerable well-known organisations
+            for many different applications.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.IntelligentMail">
+            <summary>
+            (39) The Intelligent Mail Barcode symbology. 
+            This symbology is used in the USPS mailstream. It is also known as
+            the USPS OneCode Solution or USPS 4-State Customer Barcode (abbreviated
+            4CB, 4-CB, or USPS4CB)
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.GS1_DataBar_Omnidirectional">
+            <summary>
+            (40) The GS1 DataBar Omnidirectional symbology. 
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.GS1_DataBar_Truncated">
+            <summary>
+            (41) The GS1 DataBar Truncated symbology. 
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.GS1_DataBar_Stacked">
+            <summary>
+            (42) The GS1 DataBar Stacked symbology. 
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.GS1_DataBar_Stacked_Omnidirectional">
+            <summary>
+            (43) The GS1 DataBar Stacked Omnidirectional symbology. 
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.GS1_DataBar_Limited">
+            <summary>
+            (44) The GS1 DataBar Limited symbology. 
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.GS1_DataBar_Expanded">
+            <summary>
+            (45) The GS1 DataBar Expanded symbology. 
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.GS1_DataBar_Expanded_Stacked">
+            <summary>
+            (46) The GS1 DataBar Expanded Stacked symbology. 
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.MaxiCode">
+            <summary>
+            (47) The MaxiCode symbology.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.Plessey">
+            <summary>
+            (48) The Plessey Code symbology.
+            This symbology is used primarily in libraries and for retail grocery shelf marking.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.MSI">
+            <summary>
+            (49) The MSI  (also known as Modified Plessey) symbology.
+            This symbology is used primarily for inventory control,
+            marking storage containers and shelves in warehouse environments.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.ITF14">
+            <summary>
+            (50) The ITF-14 (GTIN-14, UCC-14) symbology.
+            ITF-14 is the GS1 implementation of an Interleaved 2 of 5 bar code to encode
+            a Global Trade Item Number. ITF-14 symbols are generally used on a packaging
+            step of products. The ITF-14 always encodes 14 digits.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.GTIN12">
+            <summary>
+            (51) The GTIN-12 (12-digit UPC-A) symbology.
+            GTIN-12 is a 12-digit number used primarily in North America.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.GTIN8">
+            <summary>
+            (52) The GTIN-8 (EAN-8, UCC-8): this is an 8-digit number used predominately outside of North America.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.GTIN13">
+            <summary>
+            (53) The GTIN-13 (EAN-13, UCC-13): this is an 13-digit number used predominately outside of North America.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.GTIN14">
+            <summary>
+            (54) The GTIN-14 (ITF-14, EAN-14, UCC-14) symbology.
+            GTIN-14 is the GS1 implementation of an Interleaved 2 of 5 bar code to encode
+            a Global Trade Item Number. GTIN-14 symbols are generally used on a packaging
+            step of products. The GTIN-14 always encodes 14 digits.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.GS1_QRCode">
+            <summary>
+            (55) GS1 QRCode 
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.SymbologyType.PharmaCode">
+            <summary>
+            (56) Pharma Code
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Bytescout.PDF.PaperSizes.ParseToPoints(System.String,System.Single@,System.Single@,System.Boolean)" -->
+    </members>
+</doc>

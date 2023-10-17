@@ -44,6 +44,10 @@
               "target": "Package",
               "version": "[2.1.0, )"
             },
+            "Bytescout.BarCode": {
+              "target": "Package",
+              "version": "[7.6.3.1256, )"
+            },
             "Dapper": {
               "target": "Package",
               "version": "[2.1.11, )"
@@ -67,6 +71,22 @@
             "System.Text.Encoding.CodePages": {
               "target": "Package",
               "version": "[7.0.0, )"
+            },
+            "ZXing": {
+              "target": "Package",
+              "version": "[2.1.1, )"
+            },
+            "ZXing.Net": {
+              "target": "Package",
+              "version": "[0.16.9, )"
+            },
+            "ZXing.Net.Mobile.Forms": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "Zing": {
+              "target": "Package",
+              "version": "[1.0.0, )"
             }
           },
           "imports": [

@@ -1,0 +1,661 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Bytescout.BarCode.WPF</name>
+    </assembly>
+    <members>
+        <!-- Badly formed XML comment ignored for member "T:Bytescout.BarCode.WPF.BarcodeControl" -->
+        <member name="M:Bytescout.BarCode.WPF.BarcodeControl.#cctor">
+            <summary>
+            Sets up the default WPF style
+            </summary>
+        </member>
+        <member name="M:Bytescout.BarCode.WPF.BarcodeControl.#ctor">
+            <summary>
+            Default constructor. 
+            Initializes new instance of the <see cref="T:Bytescout.BarCode.WPF.BarcodeControl" /> class.
+            </summary>
+        </member>
+        <member name="P:Bytescout.BarCode.WPF.BarcodeControl.AutoFitToControlSize">
+            <summary>
+            Gets or sets a value indicating whether [auto fit to control size].
+            </summary>
+            <value>
+                <c>true</c> if [auto fit to control size]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:Bytescout.BarCode.WPF.BarcodeControl.OnRender(System.Windows.Media.DrawingContext)">
+            <summary>
+            Draws the content of a <see cref="T:System.Windows.Media.DrawingContext" /> object during the render pass of a <see cref="T:System.Windows.Controls.Panel" /> element.
+            </summary>
+            <param name="dc">The <see cref="T:System.Windows.Media.DrawingContext" /> object to draw.</param>
+            <remarks>
+            It actually draws a cached image of the barcode.
+            </remarks>
+        </member>
+        <member name="M:Bytescout.BarCode.WPF.BarcodeControl.OnRenderSizeChanged(System.Windows.SizeChangedInfo)">
+            <summary>
+            Raises the <see cref="E:System.Windows.FrameworkElement.SizeChanged" /> event, using the specified information as part of the eventual event data.
+            </summary>
+            <param name="sizeInfo">Details of the old and new size involved in the change.</param>
+        </member>
+        <member name="P:Bytescout.BarCode.WPF.BarcodeControl.RegistrationKey">
+            <summary>
+            Gets or sets the key number part of registration information.
+            </summary>
+            <value>The key number part of registration information.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.WPF.BarcodeControl.RegistrationName">
+            <summary>
+            Gets or sets the name part of the registration information.
+            </summary>
+            <value>The name part of the registration information.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.WPF.BarcodeControl.AddChecksum">
+            <summary>
+            Gets or sets a value indicating whether checksum should be added to barcode.
+            </summary>
+            <value>
+                <c>true</c> if checksum should be added to barcode; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.WPF.BarcodeControl.AddChecksumToCaption">
+            <summary>
+            Gets or sets a value indicating whether checksum should be added to barcode caption.
+            </summary>
+            <value>
+                <c>true</c> if checksum should be added to barcode caption; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Bytescout.BarCode.WPF.BarcodeControl.AdditionalCaption">
+            <summary>
+            Gets or sets the additional barcode caption text to draw.
+            </summary>
+            <value>The additional barcode caption text to draw.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.WPF.BarcodeControl.AdditionalCaptionFont">
+            <summary>
+            Gets or sets the additional barcode caption font.
+            </summary>
+            <value>The additional barcode caption font.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.WPF.BarcodeControl.AdditionalCaptionPosition">
+            <summary>
+            Gets or sets the barcode additional caption position.
+            </summary>
+            <value>The barcode additional caption position.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.WPF.BarcodeControl.Angle">
+            <summary>
+            Gets or sets the barcode rotation angle.
+            </summary>
+            <value>The barcode rotation angle.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.WPF.BarcodeControl.BackColor">
+            <summary>
+            Gets or sets the color used to draw the barcode background.
+            </summary>
+            <value>The color used to draw the barcode background.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.WPF.BarcodeControl.ForeColor">
+            <summary>
+            Gets or sets the color used to draw the barcode bars and caption(s).
+            </summary>
+            <value>The color used to draw the barcode bars and caption(s).</value>
+        </member>
+        <member name="P:Bytescout.BarCode.WPF.BarcodeControl.BarHeight">
+            <summary>
+            Gets or sets the height of the barcode bars in pixels.
+            </summary>
+            <value>The height of the barcode bars in pixels.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.WPF.BarcodeControl.Caption">
+            <summary>
+            Gets or sets the barcode caption (by default this is encoded value).
+            </summary>
+            <value>The barcode caption.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.WPF.BarcodeControl.CaptionFont">
+            <summary>
+            Gets or sets the barcode caption font.
+            </summary>
+            <value>The barcode caption font.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.WPF.BarcodeControl.CaptionPosition">
+            <summary>
+            Gets or sets the barcode caption position.
+            </summary>
+            <value>The barcode caption position.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.WPF.BarcodeControl.DrawCaption">
+            <summary>
+            Gets or sets a value indicating whether to draw the barcode encoded value.
+            </summary>
+            <value>
+                <c>true</c> if to draw the barcode encoded value; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.WPF.BarcodeControl.DrawCaptionFor2DBarcodes">
+            <summary>
+            Gets or sets a value indicating whether to draw the caption for 2D barcodes.
+            </summary>
+            <value>
+                <c>true</c> if to draw the barcode encoded value for 2D
+            barcodes; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Bytescout.BarCode.WPF.BarcodeControl.CutUnusedSpace">
+            <summary>
+            Gets or sets a value indicating whether [cut unused space].
+            </summary>
+            <value>
+                <c>true</c> if [cut unused space]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Bytescout.BarCode.WPF.BarcodeControl.DrawQuietZones">
+            <summary>
+            Gets or sets a value indicating whether to draw quite zones when
+            drawing symbologies that have such zones.
+            </summary>
+        </member>
+        <member name="P:Bytescout.BarCode.WPF.BarcodeControl.Margins">
+            <summary>
+            Gets or sets the barcode margins.
+            </summary>
+            <value>The barcode margins.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.WPF.BarcodeControl.NarrowBarWidth">
+            <summary>
+            Gets or sets the width of the narrow bar in pixels.
+            </summary>
+            <value>The width of the narrow bar in pixels.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.WPF.BarcodeControl.Options">
+            <summary>
+            Gets or sets the barcode symbology specific options.
+            </summary>
+            <value>The barcode symbology specific options.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.WPF.BarcodeControl.PreserveMinReadableSize">
+            <summary>
+            Gets or sets a value indicating whether to check output size so it's
+            not less than barcode size.
+            </summary>
+            <value>A value indicating whether to check output size so it's
+            not less than barcode size.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.WPF.BarcodeControl.RenderingHint">
+            <summary>
+            Gets or sets the barcode text rendering quality.
+            </summary>
+            <value>The barcode text rendering quality.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.WPF.BarcodeControl.ResolutionX">
+            <summary>
+            Gets or sets the horizontal resolution of barcode.
+            </summary>
+            <value>The horizontal resolution of barcode.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.WPF.BarcodeControl.ResolutionY">
+            <summary>
+            Gets or sets the vertical resolution of barcode.
+            </summary>
+            <value>The vertical resolution of barcode.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.WPF.BarcodeControl.SmoothingMode">
+            <summary>
+            Gets or sets the barcode rendering quality.
+            </summary>
+            <value>The barcode rendering quality.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.WPF.BarcodeControl.SupplementValue">
+            <summary>
+            Gets or sets the supplementary barcode value to encode.
+            </summary>
+            <value>The supplementary barcode value to encode.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.WPF.BarcodeControl.Symbology">
+            <summary>
+            Gets the barcode symbology type.
+            </summary>
+            <value>The barcode symbology.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.WPF.BarcodeControl.Value">
+            <summary>
+            Gets or sets the barcode value to encode.
+            </summary>
+            <value>The barcode value to encode.</value>
+        </member>
+        <member name="P:Bytescout.BarCode.WPF.BarcodeControl.WideToNarrowRatio">
+            <summary>
+            Gets or sets the width of a wide bar relative to the narrow bar.
+            </summary>
+            <value>The width of a wide bar relative to the narrow bar.</value>
+        </member>
+        <member name="M:Bytescout.BarCode.WPF.BarcodeControl.DrawToPDF(System.IO.Stream,System.Int32,System.Int32,System.Int32,System.IO.Stream)">
+            <summary> 
+             Draws barcode on specified page of PDF document.
+            </summary>
+            <param name="inputStream">Stream containing input PDF document.</param>
+            <param name="pageIndex">Zero-based page index. Use -1 to draw barcode on each document page.</param>
+            <param name="x">X coordinate (in document units).</param>
+            <param name="y">Y coordinate (in document units).</param>
+             ///<param name="outputStream">outputStream.</param></member>
+        <member name="M:Bytescout.BarCode.WPF.BarcodeControl.DrawToPDF(System.String,System.Int32,System.Int32,System.Int32,System.String)">
+            <summary> 
+             Draws barcode on specified page of PDF document.
+            </summary>
+            <param name="inputFile">Input PDF file name.</param>
+            <param name="pageIndex">Zero-based page index. Use -1 to draw barcode on each document page.</param>
+            <param name="x">X coordinate (in document units).</param>
+            <param name="y">Y coordinate (in document units).</param>
+            <param name="outputFile">Output pdfFileName</param>
+        </member>
+        <member name="M:Bytescout.BarCode.WPF.BarcodeControl.FitInto(System.Single,System.Single,Bytescout.BarCode.UnitOfMeasure)">
+            <summary>
+            Fits the barcode into the area of size specified in units.
+            Calling this method will change output size of the barcode.
+            Barcode size will be increased in order to occupy all
+            of the area.
+            </summary>
+            <param name="width">The width of the area in specified units.</param>
+            <param name="height">The height of the area in specified units.</param>
+            <param name="unit">The unit of measure for area size.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.WPF.BarcodeControl.FitInto(System.Int32,System.Int32)">
+            <summary>
+            Fits the barcode into the area of size specified in pixels.
+            Calling this method will change output size of the barcode.
+            Barcode size will be increased in order to occupy all
+            of the area.
+            </summary>
+            <param name="width">The width of the area.</param>
+            <param name="height">The height of the area.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.WPF.BarcodeControl.FitInto(System.Windows.Size)">
+            <summary>
+            Fits the barcode into the area of size specified in pixels.
+            Calling this method will change output size of the barcode.
+            Barcode size will be increased in order to occupy all
+            of the area.
+            </summary>
+            <param name="size">The size of the area to fit the barcode into.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.WPF.BarcodeControl.FitInto(System.Windows.Size,Bytescout.BarCode.UnitOfMeasure)">
+            <summary>
+            Fits the barcode into the area of size specified in units.
+            Calling this method will change output size of the barcode.
+            Barcode size will be increased in order to occupy all
+            of the area.
+            </summary>
+            <param name="size">The size of the area to fit the barcode into.</param>
+            <param name="unit">The unit of the size.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.WPF.BarcodeControl.GetBarHeight(Bytescout.BarCode.UnitOfMeasure)">
+            <summary>
+            Retrieves the height of the barcode bars in specified units.
+            </summary>
+            <param name="unit">The unit of measure for retrieved bar height value.</param>
+            <returns>
+            The height of the barcode bars in specified units
+            </returns>
+        </member>
+        <member name="M:Bytescout.BarCode.WPF.BarcodeControl.GetImage">
+            <summary>
+            Gets the bitmap with the barcode.
+            </summary>
+            <returns>The bitmap with the barcode.</returns>
+        </member>
+        <member name="M:Bytescout.BarCode.WPF.BarcodeControl.GetImageBytes">
+            <summary>
+            Gets the bytes of the bitmap with the barcode.
+            </summary>
+            <returns>The bytes of the bitmap with the barcode.</returns>
+        </member>
+        <member name="M:Bytescout.BarCode.WPF.BarcodeControl.GetImageBytesEMF">
+            <summary>
+            Gets the bytes of the EMF image with the barcode.
+            </summary>
+            <returns>
+            The bytes of the EMF image with the barcode.
+            </returns>
+        </member>
+        <member name="M:Bytescout.BarCode.WPF.BarcodeControl.GetImageBytesGIF">
+            <summary>
+            Gets the bytes of the GIF image with the barcode.
+            </summary>
+            <returns>The bytes of the GIF image with the barcode.</returns>
+        </member>
+        <member name="M:Bytescout.BarCode.WPF.BarcodeControl.GetImageBytesJPG">
+            <summary>
+            Gets the bytes of the JPG image with the barcode.
+            </summary>
+            <returns>The bytes of the JPG image with the barcode.</returns>
+        </member>
+        <member name="M:Bytescout.BarCode.WPF.BarcodeControl.GetImageBytesPNG">
+            <summary>
+            Gets the bytes of the PNG image with the barcode.
+            </summary>
+            <returns>The bytes of the PNG image with the barcode.</returns>
+        </member>
+        <member name="M:Bytescout.BarCode.WPF.BarcodeControl.GetImageBytesTIFF">
+            <summary>
+            Gets the bytes of the TIFF image with the barcode.
+            </summary>
+            <returns>The bytes of the TIFF image with the barcode.</returns>
+        </member>
+        <member name="M:Bytescout.BarCode.WPF.BarcodeControl.GetImageBytesWMF">
+            <summary>
+            Gets the bytes of the WMF image with the barcode.
+            </summary>
+            <returns>
+            The bytes of the WMF image with the barcode.
+            </returns>
+        </member>
+        <member name="M:Bytescout.BarCode.WPF.BarcodeControl.GetMarginBottom(Bytescout.BarCode.UnitOfMeasure)">
+            <summary>
+            Retrieves the bottom barcode margin value in specified units.
+            </summary>
+            <param name="unit">The unit of measure for retrieved margin value.</param>
+            <returns>
+            The bottom barcode margin value in specified units.
+            </returns>
+        </member>
+        <member name="M:Bytescout.BarCode.WPF.BarcodeControl.GetMarginLeft(Bytescout.BarCode.UnitOfMeasure)">
+            <summary>
+            Retrieves the left barcode margin value in specified units.
+            </summary>
+            <param name="unit">The unit of measure for retrieved margin value.</param>
+            <returns>
+            The left barcode margin value in specified units.
+            </returns>
+        </member>
+        <member name="M:Bytescout.BarCode.WPF.BarcodeControl.GetMarginRight(Bytescout.BarCode.UnitOfMeasure)">
+            <summary>
+            Retrieves the right barcode margin value in specified units.
+            </summary>
+            <param name="unit">The unit of measure for retrieved margin value.</param>
+            <returns>
+            The right barcode margin value in specified units.
+            </returns>
+        </member>
+        <member name="M:Bytescout.BarCode.WPF.BarcodeControl.GetMarginTop(Bytescout.BarCode.UnitOfMeasure)">
+            <summary>
+            Retrieves the top barcode margin value in specified units.
+            </summary>
+            <param name="unit">The unit of measure for retrieved margin value.</param>
+            <returns>
+            The top barcode margin value in specified units.
+            </returns>
+        </member>
+        <member name="M:Bytescout.BarCode.WPF.BarcodeControl.GetMargins(System.Single@,System.Single@,System.Single@,System.Single@,Bytescout.BarCode.UnitOfMeasure)">
+            <summary>
+            Retrieves the barcode margins in specified units.
+            </summary>
+            <param name="left">Receives the left margin value in specified units.</param>
+            <param name="top">Receives the top margin value in specified units.</param>
+            <param name="right">Receives the right margin value in specified units.</param>
+            <param name="bottom">Receives the bottom margin value in specified units.</param>
+            <param name="unit">The unit of measure for retrieved margin values.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.WPF.BarcodeControl.GetMinimalHeight(Bytescout.BarCode.UnitOfMeasure)">
+            <summary>
+            Gets the height in specified units of the smallest rectangle that
+            can accommodate the barcode.
+            </summary>
+            <param name="unit">The unit of measure for retrieved height.</param>
+            <returns>
+            The height in specified units of the smallest rectangle that
+            can accommodate the barcode.
+            </returns>
+        </member>
+        <member name="M:Bytescout.BarCode.WPF.BarcodeControl.GetMinimalSize">
+            <summary>
+            Gets or sets the size of the smallest rectangle in pixels that
+            can accommodate the barcode on a screen compatible Graphics object.
+            </summary>
+            <returns>The size of the smallest rectangle in pixels that can accommodate the barcode.</returns>
+        </member>
+        <member name="M:Bytescout.BarCode.WPF.BarcodeControl.GetMinimalWidth(Bytescout.BarCode.UnitOfMeasure)">
+            <summary>
+            Gets the width in specified units of the smallest rectangle that
+            can accommodate the barcode.
+            </summary>
+            <param name="unit">The unit of measure for retrieved width.</param>
+            <returns>
+            The width in specified units of the smallest rectangle that
+            can accommodate the barcode.
+            </returns>
+        </member>
+        <member name="M:Bytescout.BarCode.WPF.BarcodeControl.GetNarrowBarWidth(Bytescout.BarCode.UnitOfMeasure)">
+            <summary>
+            Retrieves the width of the narrow bar in specified units.
+            </summary>
+            <param name="unit">The unit of measure for retrieved narrow bar width.</param>
+            <returns>
+            The width of the narrow bar in specified units.
+            </returns>
+        </member>
+        <member name="M:Bytescout.BarCode.WPF.BarcodeControl.GetValueRestrictions(Bytescout.BarCode.SymbologyType)">
+            <summary>
+            Gets the value restrictions for a given symbology.
+            </summary>
+            <param name="symbology">The symbology to get value restrictions for.</param>
+            <returns>The value restrictions for a given symbology.</returns>
+        </member>
+        <member name="M:Bytescout.BarCode.WPF.BarcodeControl.RevertToNormalSize">
+            <summary>
+            Reverts any changes to barcode size caused by a call to any of FitInto methods.
+            </summary>
+        </member>
+        <member name="M:Bytescout.BarCode.WPF.BarcodeControl.SaveImage(System.IO.Stream,Bytescout.BarCode.WPF.BarcodeImageFormat)">
+            <summary>
+            Saves the image with the barcode into given stream.
+            </summary>
+            <param name="stream">The stream to save barcode to.</param>
+            <param name="format">The image format of the barcode.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.WPF.BarcodeControl.SaveImage(System.IO.Stream)">
+            <summary>
+            Saves the bitmap with the barcode into given stream.
+            </summary>
+            <param name="stream">The stream to save barcode to.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.WPF.BarcodeControl.SaveImage(System.String)">
+            <summary>
+            Saves the image with the barcode.
+            </summary>
+            <param name="fileName">Name of the file to save barcode to.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.WPF.BarcodeControl.SetAdditionalCaptionFont(System.String,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Byte)">
+            <summary>
+            Sets the font with specified properties as the barcode additional caption font.
+            </summary>
+            <param name="familyName">The family name of the font.</param>
+            <param name="size">The size of the font in pixels.</param>
+            <param name="bold">If <c>true</c>, then the text drawn with the font will be bold.</param>
+            <param name="italic">If <c>true</c>, then the text drawn with the font will be italic.</param>
+            <param name="underline">If <c>true</c>, then the text drawn with the font will be underlined.</param>
+            <param name="strikeout">If <c>true</c>, then the text drawn with the font will be contain line through the middle.</param>
+            <param name="gdiCharSet">A GDI character set to use for this font.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.WPF.BarcodeControl.SetAdditionalCaptionFont(System.String,System.Int32)">
+            <summary>
+            Sets the font with specified properties as the barcode additional caption font.
+            </summary>
+            <param name="familyName">The family name of the font.</param>
+            <param name="size">The size of the font in pixels.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.WPF.BarcodeControl.SetBarHeight(System.Single,Bytescout.BarCode.UnitOfMeasure)">
+            <summary>
+            Sets the height of the barcode bars in specified units.
+            </summary>
+            <param name="height">The height of the barcode bars in specified units.</param>
+            <param name="unit">The unit of measure for bar height value.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.WPF.BarcodeControl.SetCaptionFont(System.String,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Byte)">
+            <summary>
+            Sets the font with specified properties as the barcode caption font.
+            </summary>
+            <param name="familyName">The family name of the font.</param>
+            <param name="size">The size of the font in pixels.</param>
+            <param name="bold">If <c>true</c>, then the text drawn with the font will be bold.</param>
+            <param name="italic">If <c>true</c>, then the text drawn with the font will be italic.</param>
+            <param name="underline">If <c>true</c>, then the text drawn with the font will be underlined.</param>
+            <param name="strikeout">If <c>true</c>, then the text drawn with the font will be contain line through the middle.</param>
+            <param name="gdiCharSet">A GDI character set to use for this font.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.WPF.BarcodeControl.SetCaptionFont(System.String,System.Int32)">
+            <summary>
+            Sets the font with specified properties as the barcode caption font.
+            </summary>
+            <param name="familyName">The family name of the font.</param>
+            <param name="size">The size of the font in pixels.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.WPF.BarcodeControl.SetMargins(System.Single,System.Single,System.Single,System.Single,Bytescout.BarCode.UnitOfMeasure)">
+            <summary>
+            Sets the barcode margins in specified units.
+            </summary>
+            <param name="left">The left margin value in specified units.</param>
+            <param name="top">The top margin value in specified units.</param>
+            <param name="right">The right margin value in specified units.</param>
+            <param name="bottom">The bottom margin value in specified units.</param>
+            <param name="unit">The unit of measure for margin values.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.WPF.BarcodeControl.SetNarrowBarWidth(System.Single,Bytescout.BarCode.UnitOfMeasure)">
+            <summary>
+            Sets the width of the narrow bars in specified units.
+            </summary>
+            <param name="width">The width of the narrow bars in specified units.</param>
+            <param name="unit">The unit of measure for narrow bar width value.</param>
+        </member>
+        <member name="M:Bytescout.BarCode.WPF.BarcodeControl.ValueIsValid(System.String)">
+            <summary>
+            Validates the value using current symbology rules.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>
+                <c>true</c> if value is valid (can be encoded); otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Bytescout.BarCode.WPF.BarcodeControl.GetSupplementaryValueRestrictions">
+            <summary>
+            Gets the supplementary value restrictions.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Bytescout.BarCode.WPF.BarcodeException">
+            <summary>
+            Generic exception wrapper to be used by the Barcode WPF Control
+            </summary>
+        </member>
+        <member name="T:Bytescout.BarCode.WPF.BarcodeFont">
+            <summary>
+            Encapsulates all WPF specific font settings as well as mapping to Windows Forms fonts functionality
+            </summary>
+        </member>
+        <member name="M:Bytescout.BarCode.WPF.BarcodeFont.#ctor">
+            <summary>
+            Default constructor.
+            Initializes an empty instance of BarcodeFont.
+            </summary>
+        </member>
+        <member name="P:Bytescout.BarCode.WPF.BarcodeFont.FontStyle">
+            <summary>
+            Gets or sets the FontStyle associated with this BarcodeFont instance.
+            </summary>
+        </member>
+        <member name="P:Bytescout.BarCode.WPF.BarcodeFont.FontSize">
+            <summary>
+            Gets or sets the font size associated with this BarcodeFont instance.
+            </summary>
+        </member>
+        <member name="P:Bytescout.BarCode.WPF.BarcodeFont.FontStretch">
+            <summary>
+            Gets or sets the FontStretch associated with this BarcodeFont instance.
+            </summary>
+        </member>
+        <member name="P:Bytescout.BarCode.WPF.BarcodeFont.FontWeight">
+            <summary>
+            Gets or sets the FontWeight associated with this BarcodeFont instance.
+            </summary>
+        </member>
+        <member name="P:Bytescout.BarCode.WPF.BarcodeFont.FontFamily">
+            <summary>
+            Gets or sets the FontFamily associated with this BarcodeFont instance.
+            </summary>
+        </member>
+        <member name="T:Bytescout.BarCode.WPF.BarcodeImageFormat">
+            <summary>
+            Defines all Barcode supported image formats
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.WPF.BarcodeImageFormat.None">
+            <summary>
+            No format.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.WPF.BarcodeImageFormat.Bmp">
+            <summary>
+            Bitmap image format.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.WPF.BarcodeImageFormat.Emf">
+            <summary>
+            Enhanced metafile (EMF) image format.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.WPF.BarcodeImageFormat.Exif">
+            <summary>
+            Exchangeable Image File (Exif) format.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.WPF.BarcodeImageFormat.Gif">
+            <summary>
+            Graphics Interchange Format (GIF) image format.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.WPF.BarcodeImageFormat.Icon">
+            <summary>
+            Windows icon image format.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.WPF.BarcodeImageFormat.Jpeg">
+            <summary>
+            Joint Photographic Experts Group (JPEG) image format.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.WPF.BarcodeImageFormat.MemoryBmp">
+            <summary>
+            A bitmap in memory.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.WPF.BarcodeImageFormat.Png">
+            <summary>
+            W3C Portable Network Graphics (PNG) image format.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.WPF.BarcodeImageFormat.Tiff">
+            <summary>
+            Tagged Image File Format (TIFF) image format.
+            </summary>
+        </member>
+        <member name="F:Bytescout.BarCode.WPF.BarcodeImageFormat.Wmf">
+            <summary>
+            Windows metafile (WMF) image format
+            </summary>
+        </member>
+        <member name="T:Bytescout.BarCode.WPF.BarcodeSmoothingMode">
+            <summary>
+            Defines all available smoothing modes.
+            </summary>
+        </member>
+        <member name="T:Bytescout.BarCode.WPF.BarcodeTextRenderingHint">
+            <summary>
+            Defines several text rendering options which influence the quality of the text rendering
+            </summary>
+        </member>
+        <member name="T:Bytescout.BarCode.WPF.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+    </members>
+</doc>

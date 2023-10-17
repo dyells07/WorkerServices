@@ -461,7 +461,7 @@
             <DataSetName>Report</DataSetName>
             <Top>0.08334in</Top>
             <Left>0.28in</Left>
-            <Height>0.68333in</Height>
+            <Height>0.68334in</Height>
             <Width>4.25332in</Width>
             <ZIndex>2</ZIndex>
             <Style>
@@ -479,8 +479,7 @@
                   <TextRun>
                     <Value>=Parameters!VBarcode.Value</Value>
                     <Style>
-                      <FontFamily>3 of 9 Barcode</FontFamily>
-                      <FontSize>35pt</FontSize>
+                      <FontSize>8pt</FontSize>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -493,7 +492,7 @@
                   <TextRun>
                     <Value />
                     <Style>
-                      <FontSize>12pt</FontSize>
+                      <FontSize>8pt</FontSize>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -504,9 +503,9 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Parameters!Vcode.Value</Value>
+                    <Value />
                     <Style>
-                      <FontSize>12pt</FontSize>
+                      <FontSize>8pt</FontSize>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -517,8 +516,8 @@
             </Paragraphs>
             <rd:DefaultName>Vcode</rd:DefaultName>
             <Top>0.13333in</Top>
-            <Left>4.905in</Left>
-            <Height>2.73612in</Height>
+            <Left>4.74167in</Left>
+            <Height>0.76112in</Height>
             <Width>1.075in</Width>
             <ZIndex>3</ZIndex>
             <Style>
@@ -536,7 +535,7 @@
         <Height>4.56945in</Height>
         <Style />
       </Body>
-      <Width>6.04667in</Width>
+      <Width>5.98in</Width>
       <Page>
         <PageHeader>
           <Height>1.56333in</Height>
